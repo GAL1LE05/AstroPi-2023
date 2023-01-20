@@ -2,6 +2,7 @@ from picamera import PiCamera
 from time import sleep
 from orbit import ISS
 from pathlib import Path
+import pandas as pd
 
 def convert(angle):
     """
@@ -16,7 +17,7 @@ def convert(angle):
     exif_angle = f'{degrees:.0f}/1,{minutes:.0f}/1,{seconds*10:.0f}/10'
     return sign < 0, exif_angle
 
-def capture(camera, image):
+def capture(camera, image, datafile):
     """Use `camera` to capture an `image` file with lat/long EXIF data."""
     point = ISS.coordinates()
 
@@ -37,8 +38,10 @@ def capture(camera, image):
 camera = PiCamera()
 camera.resolution = (2591, 1944)
 base_folder = Path(__file__).parent.resolve()
+data_file = pd.read_csv(f'{base_folder}/image_locations.csv')
 
 
 for i in range(3*60):
-    capture(camera, f'image._{i:03d}.jpg') #outputs image with filename image_xxx.jpg
+    capture(camera, f'{base_folder}/image._{i:03d}.jpg') #outputs image with filename image_xxx.jpg
+
     sleep(60)
