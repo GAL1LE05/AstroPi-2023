@@ -17,7 +17,7 @@ def convert(angle):
     exif_angle = f'{degrees:.0f}/1,{minutes:.0f}/1,{seconds*10:.0f}/10'
     return sign < 0, exif_angle
 
-def capture(camera, image, datafile):
+def capture(camera, image):
     """Use `camera` to capture an `image` file with lat/long EXIF data."""
     point = ISS.coordinates()
 
@@ -38,10 +38,15 @@ def capture(camera, image, datafile):
 camera = PiCamera()
 camera.resolution = (2591, 1944)
 base_folder = Path(__file__).parent.resolve()
-data_file = pd.read_csv(f'{base_folder}/image_locations.csv')
-
+img_data_file = base_folder / "image_data.csv"
 
 for i in range(3*60):
-    capture(camera, f'{base_folder}/image._{i:03d}.jpg') #outputs image with filename image_xxx.jpg
-
+    with open(img_data_file, 'a') as df:
+        capture(camera, f'{base_folder}/image_{i:03d}.jpg') #outputs image with filename image_xxx.jpg
+        point = ISS.cordinates()
+        south, lat = convert(point.latitude)
+        west, long = convert(point.longitude)
+        northsouth = "S" if south else "N"
+        eastwest = "W" if west else "E"
+        df.write(f"image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
     sleep(60)
