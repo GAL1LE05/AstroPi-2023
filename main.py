@@ -2,7 +2,6 @@ from picamera import PiCamera
 from time import sleep
 from orbit import ISS
 from pathlib import Path
-import pandas as pd
 
 def convert(angle):
     """
