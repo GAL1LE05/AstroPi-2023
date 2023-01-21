@@ -24,3 +24,4 @@ Use images captured by the AstroPi SpaceLab mission aboard the ISS to calculate 
 - matplotlib
 - glob
 - earthpy
+- datetime
