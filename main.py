@@ -60,7 +60,7 @@ for i in range(3*60-3):
         northsouth = "S" if south else "N"
         eastwest = "W" if west else "E"
         photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-        df.write(f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
+        df.write(f"{photo_timestamp}, image_{i:03d}.jpg, {lat}, {northsouth}, {long}, {eastwest} \n")
 
         # dump the buffer into the file and write it to the disk
         df.flush()
