@@ -3,6 +3,7 @@ from picamera import PiCamera
 from time import sleep
 from orbit import ISS
 from pathlib import Path
+from datetime import datetime, timedelta
 
 def convert(angle):
     """
@@ -40,7 +41,13 @@ camera.resolution = (2591, 1944)
 base_folder = Path(__file__).parent.resolve()
 img_data_file = base_folder / "image_data.csv"
 
+start_time = datetime.now() 
+now_time = datetime.now()
+
 for i in range(3*60-3):
+    now_time = datetime.now()
+    if now_time >= start_time + timedelta(hours = 3):
+        break
     with open(img_data_file, 'a') as df:
         # outputs image with filename image_xxx.jpg
         capture(camera, f'{base_folder}/image_{i:03d}.jpg') 
@@ -51,7 +58,8 @@ for i in range(3*60-3):
         west, long = convert(point.longitude)
         northsouth = "S" if south else "N"
         eastwest = "W" if west else "E"
-        df.write(f"image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
+        photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+        df.write(f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
 
         # dump the buffer into the file and write it to the disk
         df.flush()
