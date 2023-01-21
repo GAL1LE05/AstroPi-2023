@@ -40,7 +40,7 @@ camera.resolution = (2591, 1944)
 base_folder = Path(__file__).parent.resolve()
 img_data_file = base_folder / "image_data.csv"
 
-for i in range(3*60):
+for i in range(3*60-3):
     with open(img_data_file, 'a') as df:
         capture(camera, f'{base_folder}/image_{i:03d}.jpg') #outputs image with filename image_xxx.jpg
         point = ISS.cordinates()
