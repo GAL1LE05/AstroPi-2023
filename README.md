@@ -12,3 +12,14 @@ Use images captured by the AstroPi SpaceLab mission aboard the ISS to calculate 
 - Decide whether to integrate the image capture and processing all into the 3 hour mission or do the processing once we get the data
 - (Maybe) Integrate both the image capture and processing together and automate it for the 3 hour mission
 - Test the final code
+
+## Dependecies
+- picamera
+- orbit
+- pathlib
+- os
+- time
+- numpy
+- matplotlib
+- glob
+- earthpy
