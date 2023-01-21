@@ -1,6 +1,6 @@
 import os
 from picamera import PiCamera
-from time import sleep
+from time import sleep, perf_counter
 from orbit import ISS
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -45,6 +45,7 @@ start_time = datetime.now()
 now_time = datetime.now()
 
 for i in range(3*60-3):
+    st = perf_counter() # start time of the loop
     now_time = datetime.now()
     if now_time >= start_time + timedelta(hours = 3):
         break
@@ -65,5 +66,7 @@ for i in range(3*60-3):
         df.flush()
         os.fsync(df.fileno())
     sleep(60)
+    et = perf_counter() # end time of the loop
+    print(f"the loop took {et-st:0.2f} seconds to complete")
 
 camera.close()
