@@ -1,3 +1,4 @@
+import os
 from picamera import PiCamera
 from time import sleep
 from orbit import ISS
@@ -48,4 +49,6 @@ for i in range(3*60):
         northsouth = "S" if south else "N"
         eastwest = "W" if west else "E"
         df.write(f"image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
+        df.flush()
+        os.fsync(df.fileno())
     sleep(60)
