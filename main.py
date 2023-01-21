@@ -42,13 +42,18 @@ img_data_file = base_folder / "image_data.csv"
 
 for i in range(3*60-3):
     with open(img_data_file, 'a') as df:
-        capture(camera, f'{base_folder}/image_{i:03d}.jpg') #outputs image with filename image_xxx.jpg
+        # outputs image with filename image_xxx.jpg
+        capture(camera, f'{base_folder}/image_{i:03d}.jpg') 
+
+        # gets the coordiates of the ISS and writes it to a data file along with the image filename
         point = ISS.cordinates()
         south, lat = convert(point.latitude)
         west, long = convert(point.longitude)
         northsouth = "S" if south else "N"
         eastwest = "W" if west else "E"
         df.write(f"image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
+
+        # dump the buffer into the file and write it to the disk
         df.flush()
         os.fsync(df.fileno())
     sleep(60)
