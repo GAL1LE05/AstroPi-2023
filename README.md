@@ -1,4 +1,5 @@
-# AstroPi-2023 - Mission SpaceLab
+# AstroPi 2023 - Mission SpaceLab
+# Team Trivials
 
 ## Objective
 Use images captured by the AstroPi SpaceLab mission aboard the ISS to calculate NDVI and with it measure the impact of wildfires on long term foliage density and forest cover and, if possible with the collected imagery, observe differences in vegetation coverage surrounding urban areas and check for its evolution over time as compared with previous NDVI surveys.
