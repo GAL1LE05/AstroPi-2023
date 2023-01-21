@@ -52,3 +52,5 @@ for i in range(3*60):
         df.flush()
         os.fsync(df.fileno())
     sleep(60)
+
+camera.close()
