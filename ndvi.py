@@ -1,63 +1,26 @@
-import os
-from glob import glob
+import cv2
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
-import earthpy as et
-import earthpy.spatial as es
-import earthpy.plot as ep
+from pathlib import Path
+from time import sleep
 
-data = et.data.get_data("vignette-landsat")
-captured_image = glob(
-    "1st Test Run/image._000.jpg"
-)
-captured_image.sort()
-arr_st, meta = es.stack(captured_image, nodata=-9999)
-ndvi = es.normalized_diff(arr_st[4], arr_st[3])
-titles = ["Image 000 - Normalized Difference Vegetation Index (NDVI)"]
+base_folder = Path(__file__).parent.resolve()
+delay = 5
+scalefactor = 2
 
-# Turn off bytescale scaling due to float values for NDVI
-ep.plot_bands(ndvi, cmap="RdYlGn", cols=1, title=titles, vmin=-1, vmax=1)
+image = cv2.imread('./1st Test Run/image._000.jpg')
 
-# Create classes and apply to NDVI results
-ndvi_class_bins = [-np.inf, 0, 0.1, 0.25, 0.4, np.inf]
-ndvi_landsat_class = np.digitize(ndvi, ndvi_class_bins)
+def display(image, image_name, delay=5, scalefactor=2):
+    """convert the image into an array of the RGB values that make up each pixel"""
+    image = np.array(image, dtype=float)/float(255)
 
-# Apply the nodata mask to the newly classified NDVI data
-ndvi_landsat_class = np.ma.masked_where(
-    np.ma.getmask(ndvi), ndvi_landsat_class
-)
-np.unique(ndvi_landsat_class)
+    """scale the image by the factor specified (2 by default)"""
+    shape = image.shape
+    height = int(shape[0]/scalefactor)
+    width = int(shape[1]/scalefactor)
+    image = cv2.resize(image, (width, height))
 
-# Define color map
-nbr_colors = ["gray", "y", "yellowgreen", "g", "darkgreen"]
-nbr_cmap = ListedColormap(nbr_colors)
-
-# Define class names
-ndvi_cat_names = [
-    "No Vegetation",
-    "Bare Area",
-    "Low Vegetation",
-    "Moderate Vegetation",
-    "High Vegetation",
-]
-
-# Get list of classes
-classes = np.unique(ndvi_landsat_class)
-classes = classes.tolist()
-# The mask returns a value of none in the classes. remove that
-classes = classes[0:5]
-
-# Plot your data
-fig, ax = plt.subplots(figsize=(12, 12))
-im = ax.imshow(ndvi_landsat_class, cmap=nbr_cmap)
-
-ep.draw_legend(im_ax=im, classes=classes, titles=ndvi_cat_names)
-ax.set_title(
-    "Landsat 8 - Normalized Difference Vegetation Index (NDVI) Classes",
-    fontsize=14,
-)
-ax.set_axis_off()
-
-# Auto adjust subplot to fit figure size
-plt.tight_layout()
+    """display the image for the time period of the delay (5 seconds by default) and then close"""
+    cv2,namedWindow(image_name)
+    cv2.imshow(image_name, image)
+    sleep(delay)
+    cv2.destroyAllWindows()
