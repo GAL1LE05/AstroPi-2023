@@ -3,7 +3,6 @@ import os
 import numpy as np
 from pathlib import Path
 from time import sleep
-import fastiecm
 
 base_folder = Path(__file__).parent.resolve()
 delay = 5
