@@ -54,13 +54,13 @@ for i in range(3*60-3):
         capture(camera, f'{base_folder}/image_{i:03d}.jpg') 
 
         # gets the coordiates of the ISS and writes it to a data file along with the image filename
-        point = ISS.cordinates()
+        point = ISS.coordinates()
         south, lat = convert(point.latitude)
         west, long = convert(point.longitude)
         northsouth = "S" if south else "N"
         eastwest = "W" if west else "E"
         photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-        df.write(f"{photo_timestamp}, image_{i:03d}.jpg, {lat}, {northsouth}, {long}, {eastwest} \n")
+        df.write(f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
 
         # dump the buffer into the file and write it to the disk
         df.flush()
