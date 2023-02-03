@@ -6,10 +6,11 @@ Use images captured by the AstroPi SpaceLab mission aboard the ISS to calculate 
 
 ## To-Do:
 - ~~Sync data written to files to the disk~~
-- Check the filters necessary for the pictures to be taken
-- Make sure the location of the pictures is being correctly written into the csv data file
+- ~~Check the filters necessary for the pictures to be taken~~
+- ~~Make sure the location of the pictures is being correctly written into the csv data file~~
 - ~~Log the time and date of the photos to the csv data file~~
-- Test the NDVI calculation and plotting code for the right formula and make sure all modules necessary are available on Mission SpaceLab
+- ~~Test the NDVI calculation and plotting code for the right formula and make sure all modules necessary are available on Mission SpaceLab~~
+- Get a working colour mapping for the ndvi images
 - Decide whether to integrate the image capture and processing all into the 3 hour mission or do the processing once we get the data
 - (Maybe) Integrate both the image capture and processing together and automate it for the 3 hour mission
 - Test the final code

@@ -3,6 +3,7 @@ import os
 import numpy as np
 from pathlib import Path
 from time import sleep
+import fastiecm
 
 base_folder = Path(__file__).parent.resolve()
 delay = 5
@@ -55,12 +56,11 @@ for image in os.listdir(base_folder):
 
         filename, extension = image.split(".", 1)
         print(f"showing {filename}")
-        display(original, 'Original', -1)
+        #display(original, 'Original', -1)
         contrasted = contrast_stretch(original)
-        display(contrasted, 'Contrasted Original', -1)
+        #display(contrasted, 'Contrasted Original', -1)
         ndvi = calc_ndvi(contrasted)
-        display(ndvi, 'NDVI', -1)
+        #display(ndvi, 'NDVI', -1)
         ndvi_contrasted = contrast_stretch(ndvi)
-        display(ndvi_contrasted, 'NDVI Contrasted', -1)
-        color_mapped_prep = ndvi_contrasted.astype(np.uint8)
+        #display(ndvi_contrasted, 'NDVI Contrasted', -1)
         cv2.imwrite(filename + '_ndvi.png', ndvi_contrasted)
