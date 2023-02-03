@@ -1,4 +1,5 @@
 import cv2
+import os
 import numpy as np
 from pathlib import Path
 from time import sleep
@@ -7,20 +8,26 @@ base_folder = Path(__file__).parent.resolve()
 delay = 5
 scalefactor = 2
 
-original = cv2.imread(r'/home/astropi-trivials/AstroPi-2023/image_000.jpg')
+imagefile = base_folder / 'image_000.jpg'
 
-
-def display(image, image_name):
+def display(image, image_name, delay=5, scalefactor=2):
+    """convert the image into an array of the RGB values that make up each pixel"""
     image = np.array(image, dtype=float)/float(255)
+
+    """scale the image by the factor specified (2 by default)"""
     shape = image.shape
-    height = int(shape[0]/2)
-    width = int(shape[1]/2)
+    height = int(shape[0]/scalefactor)
+    width = int(shape[1]/scalefactor)
     image = cv2.resize(image, (width, height))
+
+    """display the image for the time period of the delay (5 seconds by default) and then close"""
     cv2.namedWindow(image_name)
     cv2.imshow(image_name, image)
-    cv2.waitKey(0)
+    if delay != 0:
+        sleep(delay)
+    else:
+        cv2.waitKey(0)
     cv2.destroyAllWindows()
-
 
 def contrast_stretch(im):
     in_min = np.percentile(im, 5)
@@ -34,20 +41,26 @@ def contrast_stretch(im):
     out += in_min
     return out
 
-
 def calc_ndvi(image):
     b, g, r = cv2.split(image)
     bottom = (r.astype(float) + b.astype(float))
     bottom[bottom == 0] = 0.01
-    ndvi = (r.astype(float) - b)/bottom
+    ndvi = (b.astype(float) - r)/bottom
     return ndvi
 
+for image in os.listdir(base_folder):
 
-display(original, 'Original')
-contrasted = contrast_stretch(original)
-display(contrasted, 'Contrasted Original')
-ndvi = calc_ndvi(contrasted)
-display(ndvi, 'NDVI')
-ndvi_contrasted = contrast_stretch(ndvi)
-display(ndvi_contrasted, 'NDVI Contrasted')
-color_mapped_prep = ndvi_contrasted.astype(np.uint8)
+    if image.endswith(".jpg"):
+        original = cv2.imread(str(base_folder / str(image)))
+
+        filename, extension = image.split(".", 1)
+        print(f"showing {filename}")
+        display(original, 'Original', 0)
+        contrasted = contrast_stretch(original)
+        display(contrasted, 'Contrasted Original', 0)
+        ndvi = calc_ndvi(contrasted)
+        display(ndvi, 'NDVI', 0)
+        ndvi_contrasted = contrast_stretch(ndvi)
+        display(ndvi_contrasted, 'NDVI Contrasted', 0)
+        color_mapped_prep = ndvi_contrasted.astype(np.uint8)
+        cv2.imwrite(filename + '_ndvi.png', ndvi_contrasted)

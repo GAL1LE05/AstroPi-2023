@@ -44,7 +44,7 @@ img_data_file = base_folder / "image_data.csv"
 start_time = datetime.now() 
 now_time = datetime.now()
 
-for i in range(3*60-3):
+for i in range(3*60-4):
     st = perf_counter() # start time of the loop
     now_time = datetime.now()
     if now_time >= start_time + timedelta(hours = 3):
