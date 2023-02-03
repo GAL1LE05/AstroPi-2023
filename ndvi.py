@@ -23,7 +23,7 @@ def display(image, image_name, delay=5, scalefactor=2):
     """display the image for the time period of the delay (5 seconds by default) and then close"""
     cv2.namedWindow(image_name)
     cv2.imshow(image_name, image)
-    if delay != 0:
+    if delay != -1:
         sleep(delay)
     else:
         cv2.waitKey(0)
@@ -55,12 +55,12 @@ for image in os.listdir(base_folder):
 
         filename, extension = image.split(".", 1)
         print(f"showing {filename}")
-        display(original, 'Original', 0)
+        display(original, 'Original', -1)
         contrasted = contrast_stretch(original)
-        display(contrasted, 'Contrasted Original', 0)
+        display(contrasted, 'Contrasted Original', -1)
         ndvi = calc_ndvi(contrasted)
-        display(ndvi, 'NDVI', 0)
+        display(ndvi, 'NDVI', -1)
         ndvi_contrasted = contrast_stretch(ndvi)
-        display(ndvi_contrasted, 'NDVI Contrasted', 0)
+        display(ndvi_contrasted, 'NDVI Contrasted', -1)
         color_mapped_prep = ndvi_contrasted.astype(np.uint8)
         cv2.imwrite(filename + '_ndvi.png', ndvi_contrasted)
