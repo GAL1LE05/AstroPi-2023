@@ -1,19 +1,44 @@
+
+import cv2
 import numpy as np
-from PIL import Image
+from pathlib import Path
+from time import sleep
 
-# Open the image
-img = Image.open("test_image98.jpeg")
+base_folder = Path(__file__).parent.resolve()
+delay = 5
+scalefactor = 2
 
-# Convert the image to a numpy array
-img_data = np.array(img)
+image = cv2.imread('image._000 copy.jpg')
 
-# Extract the red and NIR channels
-red = img_data[:,:,0]
-nir = img_data[:,:,2]
+def display(image, image_name, delay=5, scalefactor=2):
+    """convert the image into an array of the RGB values that make up each pixel"""
+    image = np.array(image, dtype=float)/float(255)
 
-# Calculate NDVI
-ndvi = (nir - red) / (nir + red)
+    """scale the image by the factor specified (2 by default)"""
+    shape = image.shape
+    height = int(shape[0]/scalefactor)
+    width = int(shape[1]/scalefactor)
+    image = cv2.resize(image, (width, height))
 
-# Save the NDVI image
-im = Image.fromarray(ndvi)
-im.save("ndvi.jpg")
+    """display the image for the time period of the delay (5 seconds by default) and then close"""
+    cv2.namedWindow(image_name)
+    cv2.imshow(image_name, image)
+    sleep(delay)
+    cv2.destroyAllWindows()
+
+def contrast_stretch(im):
+    in_min = np.percentile(im, 5)
+    in_max = np.percentile(im, 95)
+
+    out_min = 0.0
+    out_max = 255.0
+
+    out = im - in_min
+    out *= ((out_min - out_max) / (in_min - in_max))
+    out += in_min
+    
+    return out
+
+display(image, "original")
+contrasted = contrast_stretch(image)
+display(contrasted, "contrasted image")
