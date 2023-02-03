@@ -7,7 +7,10 @@ base_folder = Path(__file__).parent.resolve()
 delay = 5
 scalefactor = 2
 
-original = cv2.imread(r'C:\Users\LENOVO\Documents\AstroPi-2023\test_image98.jpeg')
+try:
+    original = cv2.imread(r'C:\Users\LENOVO\Documents\AstroPi-2023\test_image98.jpeg')
+except:
+    original = cv2.imread(r'/home/gallo/AstroPi-2023/image._000 copy.jpg')
 
 
 def display(image, image_name):
