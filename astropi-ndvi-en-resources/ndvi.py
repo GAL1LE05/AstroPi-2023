@@ -9,8 +9,6 @@ base_folder = Path(__file__).parent.resolve()
 delay = 5
 scalefactor = 2
 
-imagefile = base_folder / 'image_000.jpg'
-
 
 def display(image, image_name, delay=5, scalefactor=2):
     """convert the image into an array of the RGB values that make up each pixel"""
@@ -55,6 +53,7 @@ def calc_ndvi(image):
     ndvi = (b.astype(float) - r)/bottom
     return ndvi
 
+
 start_time = datetime.now()
 
 for image in os.listdir(base_folder):
@@ -71,7 +70,8 @@ for image in os.listdir(base_folder):
         # display(ndvi, 'NDVI', -1)
         ndvi_contrasted = contrast_stretch(ndvi)
         # display(ndvi_contrasted, 'NDVI Contrasted', -1)
-        cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')), ndvi_contrasted)
+        cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
+                    ndvi_contrasted)
 
 finish_time = datetime.now()
 elapsed = finish_time - start_time

@@ -9,8 +9,6 @@ base_folder = Path(__file__).parent.resolve()
 delay = 5
 scalefactor = 2
 
-imagefile = base_folder / 'image_000.jpg'
-
 
 def display(image, image_name, delay=5, scalefactor=2):
     """convert the image into an array of the RGB values that make up each pixel"""
@@ -40,7 +38,10 @@ def contrast_stretch(im):
     out_max = 255.0
 
     out = im - in_min
-    out *= ((out_min - out_max) / (in_min - in_max))
+    try:
+        out *= ((out_min - out_max) / (in_min - in_max))
+    except ZeroDivisionError:
+        out *= 255
     out += in_min
     return out
 
@@ -51,6 +52,7 @@ def calc_ndvi(image):
     bottom[bottom == 0] = 0.01
     ndvi = (b.astype(float) - r)/bottom
     return ndvi
+
 
 start_time = datetime.now()
 
@@ -68,8 +70,11 @@ for image in os.listdir(base_folder):
         # display(ndvi, 'NDVI', -1)
         ndvi_contrasted = contrast_stretch(ndvi)
         # display(ndvi_contrasted, 'NDVI Contrasted', -1)
-        cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')), ndvi_contrasted)
+        cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
+                    ndvi_contrasted)
 
 finish_time = datetime.now()
-elapsed = start_time - finish_time
+elapsed = finish_time - start_time
 print(elapsed)
+elapsed_tuple = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
+print(f"{elapsed_tuple[0]} minutes and {elapsed_tuple[1]} seconds have passed")
