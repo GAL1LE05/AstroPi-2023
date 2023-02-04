@@ -70,8 +70,7 @@ for image in os.listdir(base_folder):
         # display(ndvi, 'NDVI', -1)
         ndvi_contrasted = contrast_stretch(ndvi)
         # display(ndvi_contrasted, 'NDVI Contrasted', -1)
-        cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
-                    ndvi_contrasted)
+        cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')), ndvi_contrasted)
 
 finish_time = datetime.now()
 elapsed = finish_time - start_time
