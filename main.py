@@ -73,3 +73,5 @@ for i in range(3*60-4):
     print(f"the loop took {et-st:0.2f} seconds to complete")
 
 camera.close()
+finish_time = datetime.now()
+elapsed = start_time - finish_time
