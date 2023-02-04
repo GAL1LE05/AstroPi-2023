@@ -27,9 +27,14 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-calc_ndvi"><strong>calc_ndvi</strong></a>(image)</dt></dl>
- <dl><dt><a name="-contrast_stretch"><strong>contrast_stretch</strong></a>(im)</dt></dl>
- <dl><dt><a name="-display"><strong>display</strong></a>(image, image_name, delay=5, scalefactor=2)</dt><dd><tt>convert&nbsp;the&nbsp;image&nbsp;into&nbsp;an&nbsp;array&nbsp;of&nbsp;the&nbsp;RGB&nbsp;values&nbsp;that&nbsp;make&nbsp;up&nbsp;each&nbsp;pixel</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-calc_ndvi"><strong>calc_ndvi</strong></a>(image)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;an&nbsp;image&nbsp;as&nbsp;argument.<br>
+The&nbsp;image&nbsp;is&nbsp;processed&nbsp;according&nbsp;to&nbsp;NDVI&nbsp;calculation&nbsp;model,&nbsp;based&nbsp;on&nbsp;the&nbsp;reflectance&nbsp;of&nbsp;red&nbsp;and&nbsp;infrared&nbsp;radiation&nbsp;by&nbsp;healthy&nbsp;vegetation,&nbsp;returning&nbsp;a&nbsp;greyscale&nbsp;image&nbsp;representing&nbsp;the&nbsp;NDVI&nbsp;values&nbsp;from&nbsp;lowest&nbsp;(darkest)&nbsp;to&nbsp;highest&nbsp;(lightest).</tt></dd></dl>
+ <dl><dt><a name="-contrast_stretch"><strong>contrast_stretch</strong></a>(im)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;in&nbsp;an&nbsp;image&nbsp;as&nbsp;argument&nbsp;and,&nbsp;taking&nbsp;into&nbsp;account&nbsp;the&nbsp;min&nbsp;and&nbsp;max&nbsp;values&nbsp;of&nbsp;the&nbsp;pixels,&nbsp;it&nbsp;stretches&nbsp;the&nbsp;contrast&nbsp;of&nbsp;the&nbsp;image&nbsp;as&nbsp;to&nbsp;make&nbsp;small&nbsp;changes&nbsp;more&nbsp;evident.<br>
+Upon&nbsp;completetion,&nbsp;it&nbsp;returns&nbsp;the&nbsp;processed&nbsp;image.<br>
+If&nbsp;the&nbsp;image&nbsp;is&nbsp;a&nbsp;single&nbsp;colour,&nbsp;then&nbsp;the&nbsp;operation&nbsp;will&nbsp;throw&nbsp;a&nbsp;division&nbsp;by&nbsp;zero&nbsp;exception,&nbsp;since&nbsp;both&nbsp;the&nbsp;minimum&nbsp;and&nbsp;maximum&nbsp;values&nbsp;of&nbsp;the&nbsp;pixels&nbsp;are&nbsp;the&nbsp;same.&nbsp;This&nbsp;is&nbsp;taken&nbsp;into&nbsp;account&nbsp;and&nbsp;a&nbsp;try,&nbsp;except&nbsp;clause&nbsp;was&nbsp;added&nbsp;for&nbsp;that&nbsp;case.</tt></dd></dl>
+ <dl><dt><a name="-display"><strong>display</strong></a>(image, image_name, delay=5, scalefactor=2)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;an&nbsp;image,&nbsp;image&nbsp;name&nbsp;(string)&nbsp;as&nbsp;arguments,&nbsp;as&nbsp;well&nbsp;as&nbsp;a&nbsp;delay&nbsp;in&nbsp;seconds&nbsp;and&nbsp;a&nbsp;scale&nbsp;factor,&nbsp;both&nbsp;optional&nbsp;and&nbsp;defaulting&nbsp;to&nbsp;5&nbsp;and&nbsp;2&nbsp;respectively.<br>
+It&nbsp;scales&nbsp;the&nbsp;image&nbsp;provided&nbsp;by&nbsp;the&nbsp;inverse&nbsp;of&nbsp;the&nbsp;scale&nbsp;factor&nbsp;and&nbsp;shows&nbsp;it&nbsp;for&nbsp;the&nbsp;amount&nbsp;of&nbsp;time&nbsp;specified&nbsp;by&nbsp;the&nbsp;delay&nbsp;or,&nbsp;optionally&nbsp;if&nbsp;the&nbsp;delay&nbsp;is&nbsp;specified&nbsp;to&nbsp;be&nbsp;-1,&nbsp;it&nbsp;shows&nbsp;the&nbsp;image&nbsp;until&nbsp;input&nbsp;by&nbsp;the&nbsp;user&nbsp;through&nbsp;a&nbsp;keyboard.<br>
+Upon&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;specified&nbsp;amount&nbsp;of&nbsp;time&nbsp;or&nbsp;user&nbsp;input,&nbsp;all&nbsp;windows&nbsp;are&nbsp;closed&nbsp;and&nbsp;the&nbsp;function&nbsp;ends,&nbsp;returning&nbsp;nothing.</tt></dd></dl>
  <dl><dt><a name="-sleep"><strong>sleep</strong></a>(...)</dt><dd><tt><a href="#-sleep">sleep</a>(seconds)<br>
 &nbsp;<br>
 Delay&nbsp;execution&nbsp;for&nbsp;a&nbsp;given&nbsp;number&nbsp;of&nbsp;seconds.&nbsp;&nbsp;The&nbsp;argument&nbsp;may&nbsp;be<br>
@@ -42,19 +47,21 @@ a&nbsp;floating&nbsp;point&nbsp;number&nbsp;for&nbsp;subsecond&nbsp;precision.</
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>base_folder</strong> = PosixPath('/home/gallo/AstroPi-2023')<br>
-<strong>contrasted</strong> = array([[[ 29.30952381,  39.42857143,  37.4047619...    [116.33333333, 128.47619048, 142.64285714]]])<br>
+<strong>contrasted</strong> = array([[[ 74.78571429,  74.78571429, 111.2142857...    [348.        , 342.79591837, 358.40816327]]])<br>
 <strong>delay</strong> = 5<br>
+<strong>elapsed</strong> = datetime.timedelta(seconds=1, microseconds=231364)<br>
+<strong>elapsed_tuple</strong> = (0, 1)<br>
 <strong>extension</strong> = 'jpg'<br>
-<strong>filename</strong> = 'image_001'<br>
-<strong>image</strong> = 'main.py'<br>
-<strong>imagefile</strong> = PosixPath('/home/gallo/AstroPi-2023/image_000.jpg')<br>
-<strong>ndvi</strong> = array([[-0.1213419 , -0.1602262 , -0.1787968 , .... -0.10658821,
-        -0.10002716, -0.10159051]])<br>
-<strong>ndvi_contrasted</strong> = array([[  6.19116175,  -1.53567345,  -5.2259022 ...9.12291806,
-         10.42668831,  10.11602852]])<br>
-<strong>original</strong> = array([[[16, 21, 20],
-        [12, 17, 16],
-    ...60, 69, 73],
-        [59, 65, 72]]], dtype=uint8)<br>
-<strong>scalefactor</strong> = 2</td></tr></table>
+<strong>filename</strong> = 'test_image98'<br>
+<strong>finish_time</strong> = datetime.datetime(2023, 2, 4, 19, 19, 28, 777140)<br>
+<strong>image</strong> = 'guel_portista_2_ndvi.png'<br>
+<strong>ndvi</strong> = array([[-0.19585253, -0.20746165, -0.22053373, .... -0.02260037,
+        -0.02243139, -0.01473392]])<br>
+<strong>ndvi_contrasted</strong> = array([[-126.0592596 , -145.27981984, -166.92254...78471754,
+         161.0644981 ,  173.80876091]])<br>
+<strong>original</strong> = array([[[ 86,  86, 100],
+        [ 84,  84,  98]...88, 194],
+        [191, 189, 195]]], dtype=uint8)<br>
+<strong>scalefactor</strong> = 2<br>
+<strong>start_time</strong> = datetime.datetime(2023, 2, 4, 19, 19, 27, 545776)</td></tr></table>
 </body></html>
