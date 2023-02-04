@@ -5,6 +5,7 @@ from orbit import ISS
 from pathlib import Path
 from datetime import datetime, timedelta
 
+
 def convert(angle):
     """
     Convert a `skyfield` Angle to an EXIF-appropriate
@@ -17,6 +18,7 @@ def convert(angle):
     sign, degrees, minutes, seconds = angle.signed_dms()
     exif_angle = f'{degrees:.0f}/1,{minutes:.0f}/1,{seconds*10:.0f}/10'
     return sign < 0, exif_angle
+
 
 def capture(camera, image):
     """Use `camera` to capture an `image` file with lat/long EXIF data."""
@@ -41,17 +43,17 @@ camera.resolution = (2591, 1944)
 base_folder = Path(__file__).parent.resolve()
 img_data_file = base_folder / "image_data.csv"
 
-start_time = datetime.now() 
+start_time = datetime.now()
 now_time = datetime.now()
 
 for i in range(3*60-4):
-    st = perf_counter() # start time of the loop
+    st = perf_counter()  # start time of the loop
     now_time = datetime.now()
-    if now_time >= start_time + timedelta(hours = 3):
+    if now_time >= start_time + timedelta(hours=3):
         break
     with open(img_data_file, 'a') as df:
         # outputs image with filename image_xxx.jpg
-        capture(camera, f'{base_folder}/image_{i:03d}.jpg') 
+        capture(camera, f'{base_folder}/image_{i:03d}.jpg')
 
         # gets the coordiates of the ISS and writes it to a data file along with the image filename
         point = ISS.coordinates()
@@ -60,13 +62,14 @@ for i in range(3*60-4):
         northsouth = "S" if south else "N"
         eastwest = "W" if west else "E"
         photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-        df.write(f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
+        df.write(
+            f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
 
         # dump the buffer into the file and write it to the disk
         df.flush()
         os.fsync(df.fileno())
     sleep(60)
-    et = perf_counter() # end time of the loop
+    et = perf_counter()  # end time of the loop
     print(f"the loop took {et-st:0.2f} seconds to complete")
 
 camera.close()

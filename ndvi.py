@@ -10,6 +10,7 @@ scalefactor = 2
 
 imagefile = base_folder / 'image_000.jpg'
 
+
 def display(image, image_name, delay=5, scalefactor=2):
     """convert the image into an array of the RGB values that make up each pixel"""
     image = np.array(image, dtype=float)/float(255)
@@ -29,6 +30,7 @@ def display(image, image_name, delay=5, scalefactor=2):
         cv2.waitKey(0)
     cv2.destroyAllWindows()
 
+
 def contrast_stretch(im):
     in_min = np.percentile(im, 5)
     in_max = np.percentile(im, 95)
@@ -41,12 +43,14 @@ def contrast_stretch(im):
     out += in_min
     return out
 
+
 def calc_ndvi(image):
     b, g, r = cv2.split(image)
     bottom = (r.astype(float) + b.astype(float))
     bottom[bottom == 0] = 0.01
     ndvi = (b.astype(float) - r)/bottom
     return ndvi
+
 
 for image in os.listdir(base_folder):
 
@@ -55,11 +59,11 @@ for image in os.listdir(base_folder):
 
         filename, extension = image.split(".", 1)
         print(f"showing {filename}")
-        #display(original, 'Original', -1)
+        # display(original, 'Original', -1)
         contrasted = contrast_stretch(original)
-        #display(contrasted, 'Contrasted Original', -1)
+        # display(contrasted, 'Contrasted Original', -1)
         ndvi = calc_ndvi(contrasted)
-        #display(ndvi, 'NDVI', -1)
+        # display(ndvi, 'NDVI', -1)
         ndvi_contrasted = contrast_stretch(ndvi)
-        #display(ndvi_contrasted, 'NDVI Contrasted', -1)
+        # display(ndvi_contrasted, 'NDVI Contrasted', -1)
         cv2.imwrite(filename + '_ndvi.png', ndvi_contrasted)
