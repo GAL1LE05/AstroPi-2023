@@ -62,7 +62,7 @@ for image in os.listdir(base_folder):
         original = cv2.imread(str(base_folder / str(image)))
 
         filename, extension = image.split(".", 1)
-        print(f"showing {filename}")
+        print(f"processing {filename}")
         # display(original, 'Original', -1)
         contrasted = contrast_stretch(original)
         # display(contrasted, 'Contrasted Original', -1)
