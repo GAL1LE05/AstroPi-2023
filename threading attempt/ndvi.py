@@ -63,35 +63,38 @@ def calc_ndvi(image):
     ndvi = (b.astype(float) - r)/bottom
     return ndvi
 
-"""
-Looping through every file and folder in the current directory (without recursiveness),
-for every file with extension '.jpg' or '.jpeg', making sure not to process the same image twice or process an already NDVI image, it'll be processed into a greyscale NDVi image,
-which is saved in the same directory with a filename of the form {filename}_ndvi.png, where filename is the name of the original image.
-This is done continuously and without user input, with the elapsed time being calculated and printed to the console upon the termination of the loop.
-"""
 
-start_time = datetime.now()
-files = os.listdir(base_folder)
-for image in files:
+def main(base_folder):
+    """
+    Looping through every file and folder in the current directory (without recursiveness),
+    for every file with extension '.jpg' or '.jpeg', making sure not to process the same image twice or process an already NDVI image, it'll be processed into a greyscale NDVi image,
+    which is saved in the same directory with a filename of the form {filename}_ndvi.png, where filename is the name of the original image.
+    This is done continuously and without user input, with the elapsed time being calculated and printed to the console upon the termination of the loop.
+    """
 
-    if image.endswith(".jpg") or image.endswith(".jpeg"):
-        original = cv2.imread(str(base_folder / str(image)))
+    start_time = datetime.now()
+    files = os.listdir(base_folder)
+    for image in files:
 
-        filename, extension = image.split(".", 1)
-        if filename + "_ndvi.png" not in files and "ndvi" not in filename:
-            print(f"processing {filename}")
-            # display(original, 'Original', -1)
-            contrasted = contrast_stretch(original)
-            # display(contrasted, 'Contrasted Original', -1)
-            ndvi = calc_ndvi(contrasted)
-            # display(ndvi, 'NDVI', -1)
-            ndvi_contrasted = contrast_stretch(ndvi)
-            # display(ndvi_contrasted, 'NDVI Contrasted', -1)
-            cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
-                    ndvi_contrasted)
+        if image.endswith(".jpg") or image.endswith(".jpeg"):
+            original = cv2.imread(str(base_folder / str(image)))
 
-finish_time = datetime.now()
-elapsed = finish_time - start_time
-print(elapsed)
-minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
-print(f"{minutes} minutes and {seconds} seconds have passed")
+            filename, extension = image.split(".", 1)
+            if filename + "_ndvi.png" not in files and "ndvi" not in filename:
+                print(f"processing {filename}")
+                # display(original, 'Original', -1)
+                contrasted = contrast_stretch(original)
+                # display(contrasted, 'Contrasted Original', -1)
+                ndvi = calc_ndvi(contrasted)
+                # display(ndvi, 'NDVI', -1)
+                ndvi_contrasted = contrast_stretch(ndvi)
+                # display(ndvi_contrasted, 'NDVI Contrasted', -1)
+                cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
+                        ndvi_contrasted)
+
+    finish_time = datetime.now()
+    elapsed = finish_time - start_time
+    print(elapsed)
+    minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
+    print(f"{minutes} minutes and {seconds} seconds have passed")
+    return minutes, seconds

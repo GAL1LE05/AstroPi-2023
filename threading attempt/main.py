@@ -4,6 +4,7 @@ from time import sleep, perf_counter
 from orbit import ISS
 from pathlib import Path
 from datetime import datetime, timedelta
+import ndvi
 
 
 def convert(angle):
@@ -68,7 +69,11 @@ for i in range(3*60-4):
         # dump the buffer into the file and write it to the disk
         df.flush()
         os.fsync(df.fileno())
-    sleep(60)
+    min, sec = ndvi.main(base_folder)
+    if min < 1 and sec < 60:
+        sleep(60 - sec)
+    else:
+        pass
     et = perf_counter()  # end time of the loop
     print(f"the loop took {et-st:0.2f} seconds to complete")
 
