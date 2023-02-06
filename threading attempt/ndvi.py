@@ -4,6 +4,7 @@ import numpy as np
 from pathlib import Path
 from time import sleep
 from datetime import datetime
+import fastiecm
 
 base_folder = Path(__file__).parent.resolve()
 delay = 5
@@ -91,10 +92,26 @@ def main(base_folder):
                 # display(ndvi_contrasted, 'NDVI Contrasted', -1)
                 cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
                             ndvi_contrasted)
-
+                color_mapped_prep = ndvi_contrasted.astype(np.uint8)
+                color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm.fastiecm)
+                cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
+                            color_mapped_image)
+            elif filename + "_ndvi_cm.png" not in files and "ndvi" in filename:
+                color_mapped_prep = original.astype(np.uint8)
+                color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm.fastiecm)
+                cv2.imwrite(str(base_folder / str(filename + '_cm.png')),
+                            color_mapped_image)
+            elif filename + "_ndvi_cm.png" not in files and "ndvi" not in filename:
+                processed = cv2.imread(str(base_folder / str(filename + "ndvi.png")))
+                color_mapped_prep = processed.astype(np.uint8)
+                color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm.fastiecm)
+                cv2.imwrite(str(base_folder / str(filename + '_cm.png')),
+                            color_mapped_image)
     finish_time = datetime.now()
     elapsed = finish_time - start_time
     print(elapsed)
     minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
     print(f"{minutes} minutes and {seconds} seconds have passed")
     return minutes, seconds
+
+main(base_folder)
