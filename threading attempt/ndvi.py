@@ -90,7 +90,7 @@ def main(base_folder):
                 ndvi_contrasted = contrast_stretch(ndvi)
                 # display(ndvi_contrasted, 'NDVI Contrasted', -1)
                 cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
-                        ndvi_contrasted)
+                            ndvi_contrasted)
 
     finish_time = datetime.now()
     elapsed = finish_time - start_time
