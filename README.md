@@ -22,5 +22,5 @@ Use images captured by the AstroPi SpaceLab mission aboard the ISS to calculate 
 - pathlib
 - datetime
 - cv2
-- *os*
+- os
 - numpy
