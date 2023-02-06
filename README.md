@@ -17,10 +17,10 @@ Use images captured by the AstroPi SpaceLab mission aboard the ISS to calculate 
 
 ## Dependencies
 - picamera
-- *time*
-- *orbit*
-- *pathlib*
-- *datetime*
+- time
+- orbit
+- pathlib
+- datetime
 - cv2
 - *os*
 - numpy
