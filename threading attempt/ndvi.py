@@ -102,10 +102,10 @@ def main(base_folder):
                 cv2.imwrite(str(base_folder / str(filename + '_cm.png')),
                             color_mapped_image)
             elif filename + "_ndvi_cm.png" not in files and "ndvi" not in filename:
-                processed = cv2.imread(str(base_folder / str(filename + "ndvi.png")))
+                processed = cv2.imread(str(base_folder / str(filename + "_ndvi.png")))
                 color_mapped_prep = processed.astype(np.uint8)
                 color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm.fastiecm)
-                cv2.imwrite(str(base_folder / str(filename + '_cm.png')),
+                cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
                             color_mapped_image)
     finish_time = datetime.now()
     elapsed = finish_time - start_time
@@ -114,4 +114,4 @@ def main(base_folder):
     print(f"{minutes} minutes and {seconds} seconds have passed")
     return minutes, seconds
 
-main(base_folder)
+main(Path(__file__).parent.resolve())
