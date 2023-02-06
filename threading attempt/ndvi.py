@@ -65,7 +65,28 @@ def calc_ndvi(image):
     return ndvi
 
 
-def main(base_folder):
+def process(image, show=False, delay=-1):
+    if show:
+        display(image, 'Original', delay)
+    contrasted = contrast_stretch(image)
+    if show:
+        display(contrasted, 'Contrasted Original', delay)
+    ndvi = calc_ndvi(contrasted)
+    if show:
+        display(ndvi, 'NDVI', delay)
+    ndvi_contrasted = contrast_stretch(ndvi)
+    if show:
+        display(ndvi_contrasted, 'NDVI Contrasted', delay)
+    return ndvi_contrasted
+
+
+def colour_map(image, cm=fastiecm.fastiecm):
+    color_mapped_prep = image.astype(np.uint8)
+    color_mapped_image = cv2.applyColorMap(color_mapped_prep, cm)
+    return color_mapped_image
+
+
+def process_all(base_folder):
     """
     Looping through every file and folder in the current directory (without recursiveness),
     for every file with extension '.jpg' or '.jpeg', making sure not to process the same image twice or process an already NDVI image, it'll be processed into a greyscale NDVi image,
@@ -83,30 +104,19 @@ def main(base_folder):
             filename, extension = image.split(".", 1)
             if filename + "_ndvi.png" not in files and "ndvi" not in filename:
                 print(f"processing {filename}")
-                # display(original, 'Original', -1)
-                contrasted = contrast_stretch(original)
-                # display(contrasted, 'Contrasted Original', -1)
-                ndvi = calc_ndvi(contrasted)
-                # display(ndvi, 'NDVI', -1)
-                ndvi_contrasted = contrast_stretch(ndvi)
-                # display(ndvi_contrasted, 'NDVI Contrasted', -1)
-                cv2.imwrite(str(base_folder / str(filename + '_ndvi.png')),
-                            ndvi_contrasted)
-                color_mapped_prep = ndvi_contrasted.astype(np.uint8)
-                color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm.fastiecm)
-                cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
-                            color_mapped_image)
+                ndvi_contrasted = process(original)
+                cv2.imwrite(
+                    str(base_folder / str(filename + '_ndvi.png')), ndvi_contrasted)
+                cv2.imwrite(
+                    str(base_folder / str(filename + '_ndvi_cm.png')), colour_map(ndvi_contrasted))
             elif filename + "_ndvi_cm.png" not in files and "ndvi" in filename:
-                color_mapped_prep = original.astype(np.uint8)
-                color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm.fastiecm)
-                cv2.imwrite(str(base_folder / str(filename + '_cm.png')),
-                            color_mapped_image)
+                cv2.imwrite(
+                    str(base_folder / str(filename + '_cm.png')), colour_map(original))
             elif filename + "_ndvi_cm.png" not in files and "ndvi" not in filename:
-                processed = cv2.imread(str(base_folder / str(filename + "_ndvi.png")))
-                color_mapped_prep = processed.astype(np.uint8)
-                color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm.fastiecm)
-                cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
-                            color_mapped_image)
+                processed = cv2.imread(
+                    str(base_folder / str(filename + "_ndvi.png")))
+                cv2.imwrite(
+                    str(base_folder / str(filename + '_ndvi_cm.png')), colour_map(processed))
     finish_time = datetime.now()
     elapsed = finish_time - start_time
     print(elapsed)
@@ -114,4 +124,5 @@ def main(base_folder):
     print(f"{minutes} minutes and {seconds} seconds have passed")
     return minutes, seconds
 
-main(Path(__file__).parent.resolve())
+
+process_all(Path(__file__).parent.resolve())

@@ -4,7 +4,7 @@ import numpy as np
 from pathlib import Path
 from time import sleep
 from datetime import datetime
-import fastiecm
+import fastiecm as fastiecm
 
 base_folder = Path(__file__).parent.resolve()
 delay = 5
