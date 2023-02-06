@@ -75,3 +75,6 @@ for i in range(3*60-4):
 camera.close()
 finish_time = datetime.now()
 elapsed = start_time - finish_time
+print(elapsed)
+minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
+print(f"{minutes} minutes and {seconds} seconds have passed")

@@ -92,5 +92,5 @@ for image in os.listdir(base_folder):
 finish_time = datetime.now()
 elapsed = finish_time - start_time
 print(elapsed)
-elapsed_tuple = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
-print(f"{elapsed_tuple[0]} minutes and {elapsed_tuple[1]} seconds have passed")
+minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
+print(f"{minutes} minutes and {seconds} seconds have passed")
