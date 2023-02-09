@@ -45,10 +45,8 @@ def contrast_stretch(im):
     out_max = 255.0
 
     out = im - in_min
-    try:
-        out *= ((out_min - out_max) / (in_min - in_max))
-    except ZeroDivisionError:
-        out *= 255
+    
+    out *= ((out_min - out_max) / (in_min - in_max))
     out += in_min
     return out
 
