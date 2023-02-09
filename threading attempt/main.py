@@ -83,3 +83,7 @@ elapsed = start_time - finish_time
 print(elapsed)
 minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
 print(f"{minutes} minutes and {seconds} seconds have passed")
+with open(str(base_folder / "time.txt", 'w')) as t:
+    t.write(f"{minutes} min {seconds} s")
+    t.flush
+    os.fsync(t.fileno())
