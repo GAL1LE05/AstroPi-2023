@@ -5,13 +5,14 @@ from orbit import ISS
 from pathlib import Path
 from datetime import datetime, timedelta
 import csv
+from logzero import logfile, logger
 import ndvi
 
 
 def create_csv_file(data_file):
     """Create a new CSV file and add the header row"""
-    with open(data_file, 'w') as f:
-        writer = csv.writer(f, delimiter=';')
+    with open(data_file, 'w') as file:
+        writer = csv.writer(file, delimiter=';')
         header = ("Timestamp", "Filename", "Latitude",
                   "North/South", "Longitude", "East/West")
         writer.writerow(header)
@@ -42,7 +43,8 @@ def capture(camera, image):
     """Use `camera` to capture an `image` file with lat/long EXIF data."""
     point = ISS.coordinates()
 
-    # Convert the latitude and longitude to EXIF-appropriate representations
+    # Convert the latitude and longitude to EXIF-appropriate
+    # representations
     south, exif_latitude = convert(point.latitude)
     west, exif_longitude = convert(point.longitude)
 
@@ -56,69 +58,110 @@ def capture(camera, image):
     camera.capture(image)
 
 
+base_folder = Path(__file__).parent.resolve()
+
+# Set up the camera
 camera = PiCamera()
 camera.resolution = (2591, 1944)
-base_folder = Path(__file__).parent.resolve()
-img_data_file = base_folder / "image_data.csv"
 
+# Get the start time of the script
 start_time = datetime.now()
+# Get the current time
 now_time = datetime.now()
+# Set the desired time taken per loop in seconds
 loop_time = 50
+# Set the total time for the script to run for in minutes
 total_time = 10
 
-t = open(str(base_folder / "log.txt"), 'a')
-t.write(f"Start Time: {start_time}\n")
+logfile(str(base_folder / "log.txt"))
+logger.info(f"Start Time: {start_time}\n")
 
+img_data_file = base_folder / "image_data.csv"
 create_csv_file(img_data_file)
 
-for i in range(int(total_time*60/loop_time)):
-    st = perf_counter()  # start time of the loop
+# Loop for the necessary times to get as close to the total time, in
+# minutes, as possible, with the expected loop duration.
+for i in range(int(total_time*60/loop_time)-1):
+    # Get the start time of the loop
+    loop_start = perf_counter()
+    # Update the current time
     now_time = datetime.now()
-    if now_time >= start_time + timedelta(minutes=179):
+
+    # Check if the total time available or more have passed,
+    # and if so, break out of the loop. Serves as a second checkpoint
+    # to make sure the code doesn't run for more than 3 hours.
+    if now_time >= start_time + timedelta(minutes=total_time-1):
         break
-    with open(img_data_file, 'a') as df:
-        # outputs image with filename image_xxx.jpg
-        capture(camera, f'{base_folder}/image_{i:03d}.jpg')
+    try:
+        # Open the data file in append mode
+        with open(img_data_file, 'a') as data_file:
+            # Capture a picture and save it with filename of the form
+            # `image_xxx.jpg`.
+            capture(camera, f'{base_folder}/image_{i:03d}.jpg')
 
-        # gets the coordiates of the ISS and writes it to a data file along with the image filename
-        point = ISS.coordinates()
-        south, lat = convert(point.latitude)
-        west, long = convert(point.longitude)
-        northsouth = "S" if south else "N"
-        eastwest = "W" if west else "E"
-        photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+            # Get the coordinates of the ISS and convert them to the
+            # desired format.
+            point = ISS.coordinates()
+            south, lat = convert(point.latitude)
+            west, long = convert(point.longitude)
+            northsouth = "S" if south else "N"
+            eastwest = "W" if west else "E"
+            # Get the time at which the photo was taken and format it.
+            photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
-        add_csv_data(
-            df, f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
+            # Save the data relating to the photo
+            add_csv_data(
+                data_file, (photo_timestamp, f"image_{i:03d}.jpg", lat,
+                northsouth, long, eastwest))
 
-        # dump the buffer into the file and write it to the disk
-        df.flush()
-        os.fsync(df.fileno())
-    min, sec = ndvi.process_all(base_folder)
-    t.write(
-        f"Processing no. {i} took {min} minutes and {sec} seconds to complete\n")
-    if min < 1 and sec < loop_time:
-        sleep(loop_time - sec)
-    else:
-        pass
-    et = perf_counter()  # end time of the loop
-    t.write(f"Cycle took {et-st:0.2f} seconds to complete\n")
-    t.flush
-    os.fsync(t.fileno())
+            # Write changes to the data file to the disk
+            data_file.flush()
+            os.fsync(data_file.fileno())
+        
+        # Process all unprocessed images in the current directory and
+        # save the elapsed time to a minutes and seconds pair of
+        # variables.
+        min, sec = ndvi.process_all(base_folder)
 
+        # Log the time necessary for the processing to be completed to
+        # the log file.
+        logger.info(
+            f"Processing no. {i} took {min} minutes and {sec} seconds to \
+            complete\n")
+        
+        # Check if the desired time for a loop to take has passed.
+        # If so, continue. If not, wait for the remaining time.
+        if min < 1 and sec < loop_time:
+            sleep(loop_time - sec)
+        else:
+            pass
+
+        # Get the end time of the current loop
+        loop_end = perf_counter()
+
+        # Log the time elapsed during the entire loop to the log file,
+        # with two decimal places of precision.
+        logger.info(f"Cycle took {loop_end - loop_start:0.2f} seconds \
+                  to complete\n")
+    except Exception as e:
+        logger.exception(e)
+
+# Close the camera
 camera.close()
+# Get the finish time of the script
 finish_time = datetime.now()
+# Calculate the elapsed time
 elapsed = finish_time - start_time
-print(elapsed)
+# Divide the elapsed time into minutes and seconds
 minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
-t.write(f"End Time: {finish_time}\n")
-print(f"{minutes} minutes and {seconds} seconds have passed")
-t.write(f"Total time: {minutes} min {seconds} s\n")
-t.flush
-os.fsync(t.fileno())
-t.close()
+# Log the finish time and total elapsed time to the log file
+logger.info(f"End Time: {finish_time}\n")
+logger.info(f"Total time: {minutes} min {seconds} s\n")
 
 
-# Built with code provided by the Raspberry Pi Foundation, namely that present on the following website:
+# Built with code provided by the Raspberry Pi Foundation, namely that
+# present on the following website:
 # https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment
-# Formatted in accordance to the pep8 standard
+# Written by team Trivials for the 2022/2023 AstroPi
+# Competition - Mission Space Lab.
+# Formatted according to the PEP 8 Style Guide standard for Python code.

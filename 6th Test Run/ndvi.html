@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ndvi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ndvi</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Clenovo%5Cdocuments%5Castropi-2023%5C6th%20test%20run%5Cndvi.py">c:\users\lenovo\documents\astropi-2023\6th test run\ndvi.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="cv2.html">cv2</a><br>
+</td><td width="25%" valign=top><a href="fastiecm.html">fastiecm</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-calc_ndvi"><strong>calc_ndvi</strong></a>(image)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;a&nbsp;pixel&nbsp;value&nbsp;array,&nbsp;`image`,&nbsp;as&nbsp;argument.<br>
+The&nbsp;image&nbsp;is&nbsp;processed&nbsp;according&nbsp;to&nbsp;NDVI&nbsp;calculation&nbsp;model,<br>
+based&nbsp;on&nbsp;the&nbsp;reflectance&nbsp;of&nbsp;red&nbsp;and&nbsp;infrared&nbsp;radiation&nbsp;by&nbsp;healthy<br>
+vegetation.<br>
+&nbsp;<br>
+The&nbsp;function&nbsp;returns&nbsp;a&nbsp;greyscale&nbsp;image&nbsp;where&nbsp;pixel&nbsp;value&nbsp;is&nbsp;<br>
+proportional&nbsp;to&nbsp;NDVI,&nbsp;lighter&nbsp;values&nbsp;corresponding&nbsp;to&nbsp;high&nbsp;NDVI<br>
+and&nbsp;darker&nbsp;values&nbsp;to&nbsp;lower&nbsp;NDVI.</tt></dd></dl>
+ <dl><dt><a name="-colour_map"><strong>colour_map</strong></a>(image, cm=array([[[255, 255, 255]],
+
+       [[250, 250, 250]],
+
+       [[245, 245, 245]],
+
+       [[241, 241, 241]],
+
+       [[237, 237, 237]],
+
+       [[232, 232, 232]],
+
+       [[228, 228, 228]],
+
+       [[225, 225, 225]],
+
+       [[221, 221, 221]],
+
+       [[216, 216, 216]],
+
+       [[212, 212, 212]],
+
+       [[208, 208, 208]],
+
+       [[204, 204, 204]],
+
+       [[199, 199, 199]],
+
+       [[194, 194, 194]],
+
+       [[190, 190, 190]],
+
+       [[186, 186, 186]],
+
+       [[182, 182, 182]],
+
+       [[177, 177, 177]],
+
+       [[174, 174, 174]],
+
+       [[170, 170, 170]],
+
+       [[166, 166, 166]],
+
+       [[161, 161, 161]],
+
+       [[157, 157, 157]],
+
+       [[153, 153, 153]],
+
+       [[148, 148, 148]],
+
+       [[144, 144, 144]],
+
+       [[139, 139, 139]],
+
+       [[135, 135, 135]],
+
+       [[131, 131, 131]],
+
+       [[128, 128, 128]],
+
+       [[123, 123, 123]],
+
+       [[119, 119, 119]],
+
+       [[115, 115, 115]],
+
+       [[111, 111, 111]],
+
+       [[106, 106, 106]],
+
+       [[102, 102, 102]],
+
+       [[ 97,  97,  97]],
+
+       [[ 93,  93,  93]],
+
+       [[ 89,  89,  89]],
+
+       [[ 84,  84,  84]],
+
+       [[ 80,  80,  80]],
+
+       [[ 77,  77,  77]],
+
+       [[ 73,  73,  73]],
+
+       [[ 68,  68,  68]],
+
+       [[ 64,  64,  64]],
+
+       [[ 60,  60,  60]],
+
+       [[ 55,  55,  55]],
+
+       [[ 51,  51,  51]],
+
+       [[ 55,  55,  55]],
+
+       [[ 60,  60,  60]],
+
+       [[ 64,  64,  64]],
+
+       [[ 68,  68,  68]],
+
+       [[ 73,  73,  73]],
+
+       [[ 77,  77,  77]],
+
+       [[ 80,  80,  80]],
+
+       [[ 84,  84,  84]],
+
+       [[ 89,  89,  89]],
+
+       [[ 93,  93,  93]],
+
+       [[ 97,  97,  97]],
+
+       [[102, 102, 102]],
+
+       [[106, 106, 106]],
+
+       [[111, 111, 111]],
+
+       [[115, 115, 115]],
+
+       [[119, 119, 119]],
+
+       [[123, 123, 123]],
+
+       [[128, 128, 128]],
+
+       [[131, 131, 131]],
+
+       [[135, 135, 135]],
+
+       [[139, 139, 139]],
+
+       [[144, 144, 144]],
+
+       [[148, 148, 148]],
+
+       [[153, 153, 153]],
+
+       [[157, 157, 157]],
+
+       [[161, 161, 161]],
+
+       [[166, 166, 166]],
+
+       [[170, 170, 170]],
+
+       [[174, 174, 174]],
+
+       [[177, 177, 177]],
+
+       [[182, 182, 182]],
+
+       [[186, 186, 186]],
+
+       [[190, 190, 190]],
+
+       [[194, 194, 194]],
+
+       [[199, 199, 199]],
+
+       [[204, 204, 204]],
+
+       [[208, 208, 208]],
+
+       [[212, 212, 212]],
+
+       [[216, 216, 216]],
+
+       [[221, 221, 221]],
+
+       [[225, 225, 225]],
+
+       [[228, 228, 228]],
+
+       [[232, 232, 232]],
+
+       [[237, 237, 237]],
+
+       [[241, 241, 241]],
+
+       [[245, 245, 245]],
+
+       [[250, 250, 250]],
+
+       [[255, 255, 255]],
+
+       [[250, 250, 250]],
+
+       [[245, 245, 245]],
+
+       [[240, 240, 240]],
+
+       [[235, 235, 235]],
+
+       [[230, 230, 230]],
+
+       [[225, 225, 225]],
+
+       [[219, 219, 219]],
+
+       [[214, 214, 214]],
+
+       [[209, 209, 209]],
+
+       [[204, 204, 204]],
+
+       [[199, 199, 199]],
+
+       [[194, 194, 194]],
+
+       [[190, 190, 190]],
+
+       [[185, 185, 185]],
+
+       [[180, 180, 180]],
+
+       [[175, 175, 175]],
+
+       [[170, 170, 170]],
+
+       [[165, 165, 165]],
+
+       [[160, 160, 160]],
+
+       [[154, 154, 154]],
+
+       [[151, 151, 151]],
+
+       [[145, 145, 145]],
+
+       [[140, 140, 140]],
+
+       [[135, 135, 135]],
+
+       [[130, 130, 130]],
+
+       [[125, 125, 125]],
+
+       [[120, 120, 120]],
+
+       [[115, 115, 115]],
+
+       [[111, 111, 111]],
+
+       [[106, 106, 106]],
+
+       [[101, 101, 101]],
+
+       [[ 96,  96,  96]],
+
+       [[ 91,  91,  91]],
+
+       [[ 86,  86,  86]],
+
+       [[ 80,  80,  80]],
+
+       [[ 75,  75,  75]],
+
+       [[ 70,  70,  70]],
+
+       [[ 65,  65,  65]],
+
+       [[ 60,  60,  60]],
+
+       [[ 55,  55,  55]],
+
+       [[ 79,  65,  65]],
+
+       [[105,  77,  77]],
+
+       [[129,  87,  87]],
+
+       [[154,  97,  97]],
+
+       [[180, 107, 107]],
+
+       [[204, 119, 119]],
+
+       [[230, 129, 129]],
+
+       [[255, 139, 139]],
+
+       [[239, 147, 130]],
+
+       [[222, 153, 121]],
+
+       [[207, 161, 112]],
+
+       [[190, 167, 105]],
+
+       [[175, 175,  96]],
+
+       [[158, 182,  87]],
+
+       [[143, 190,  78]],
+
+       [[126, 196,  69]],
+
+       [[111, 204,  60]],
+
+       [[ 94, 211,  51]],
+
+       [[ 78, 218,  42]],
+
+       [[ 63, 226,  35]],
+
+       [[ 46, 232,  26]],
+
+       [[ 31, 240,  17]],
+
+       [[ 14, 246,   8]],
+
+       [[  0, 255,   0]],
+
+       [[  0, 255,   7]],
+
+       [[  0, 255,  14]],
+
+       [[  0, 255,  23]],
+
+       [[  0, 255,  31]],
+
+       [[  0, 255,  38]],
+
+       [[  0, 255,  46]],
+
+       [[  0, 255,  55]],
+
+       [[  0, 255,  63]],
+
+       [[  0, 255,  70]],
+
+       [[  0, 255,  78]],
+
+       [[  0, 255,  87]],
+
+       [[  0, 255,  94]],
+
+       [[  0, 255, 102]],
+
+       [[  0, 255, 111]],
+
+       [[  0, 255, 119]],
+
+       [[  0, 255, 126]],
+
+       [[  0, 255, 134]],
+
+       [[  0, 255, 143]],
+
+       [[  0, 255, 151]],
+
+       [[  0, 255, 158]],
+
+       [[  0, 255, 166]],
+
+       [[  0, 255, 175]],
+
+       [[  0, 255, 182]],
+
+       [[  0, 255, 190]],
+
+       [[  0, 255, 199]],
+
+       [[  0, 255, 207]],
+
+       [[  0, 255, 214]],
+
+       [[  0, 255, 222]],
+
+       [[  0, 255, 231]],
+
+       [[  0, 255, 239]],
+
+       [[  0, 255, 246]],
+
+       [[  0, 255, 255]],
+
+       [[  0, 249, 255]],
+
+       [[  0, 244, 255]],
+
+       [[  0, 239, 255]],
+
+       [[  0, 232, 255]],
+
+       [[  0, 227, 255]],
+
+       [[  0, 222, 255]],
+
+       [[  0, 217, 255]],
+
+       [[  0, 212, 255]],
+
+       [[  0, 207, 255]],
+
+       [[  0, 200, 255]],
+
+       [[  0, 195, 255]],
+
+       [[  0, 190, 255]],
+
+       [[  0, 185, 255]],
+
+       [[  0, 180, 255]],
+
+       [[  0, 175, 255]],
+
+       [[  0, 170, 255]],
+
+       [[  0, 163, 255]],
+
+       [[  0, 158, 255]],
+
+       [[  0, 153, 255]],
+
+       [[  0, 148, 255]],
+
+       [[  0, 143, 255]],
+
+       [[  0, 138, 255]],
+
+       [[  0, 131, 255]],
+
+       [[  0, 126, 255]],
+
+       [[  0, 121, 255]],
+
+       [[  0, 115, 255]],
+
+       [[  0, 111, 255]],
+
+       [[  0, 106, 255]],
+
+       [[  0, 100, 255]],
+
+       [[  0,  94, 255]],
+
+       [[  0,  89, 255]],
+
+       [[  0,  84, 255]],
+
+       [[  0,  78, 255]],
+
+       [[  0,  74, 255]],
+
+       [[  0,  69, 255]],
+
+       [[  0,  63, 255]],
+
+       [[  0,  58, 255]],
+
+       [[  0,  52, 255]],
+
+       [[  0,  46, 255]],
+
+       [[  0,  41, 255]],
+
+       [[  0,  37, 255]],
+
+       [[  0,  31, 255]],
+
+       [[  0,  26, 255]],
+
+       [[  0,  21, 255]],
+
+       [[  0,  14, 255]],
+
+       [[  0,   9, 255]],
+
+       [[  0,   4, 255]],
+
+       [[  0,   0, 255]],
+
+       [[ 14,   0, 255]],
+
+       [[ 31,   0, 255]],
+
+       [[ 46,   0, 255]],
+
+       [[ 63,   0, 255]],
+
+       [[ 78,   0, 255]],
+
+       [[ 94,   0, 255]],
+
+       [[111,   0, 255]],
+
+       [[126,   0, 255]],
+
+       [[143,   0, 255]],
+
+       [[158,   0, 255]],
+
+       [[175,   0, 255]],
+
+       [[190,   0, 255]],
+
+       [[207,   0, 255]],
+
+       [[222,   0, 255]],
+
+       [[239,   0, 255]]], dtype=uint8))</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;as&nbsp;argument&nbsp;a&nbsp;pixel&nbsp;value&nbsp;array,&nbsp;`image`&nbsp;and&nbsp;a<br>
+colour&nbsp;map,&nbsp;defaulting&nbsp;to&nbsp;the&nbsp;fastie&nbsp;colour&nbsp;map.<br>
+&nbsp;<br>
+It&nbsp;returns&nbsp;the&nbsp;image&nbsp;as&nbsp;colour&nbsp;mapped&nbsp;in&nbsp;accordance&nbsp;to&nbsp;the&nbsp;provided<br>
+colour&nbsp;map.</tt></dd></dl>
+ <dl><dt><a name="-contrast_stretch"><strong>contrast_stretch</strong></a>(im)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;in&nbsp;an&nbsp;array&nbsp;of&nbsp;pixel&nbsp;values,&nbsp;`image`&nbsp;as&nbsp;argument<br>
+and,&nbsp;taking&nbsp;into&nbsp;account&nbsp;the&nbsp;min&nbsp;and&nbsp;max&nbsp;values&nbsp;of&nbsp;the&nbsp;pixels,&nbsp;it<br>
+increases&nbsp;the&nbsp;contrast&nbsp;of&nbsp;the&nbsp;image&nbsp;as&nbsp;to&nbsp;make&nbsp;small&nbsp;changes&nbsp;more<br>
+evident.<br>
+&nbsp;<br>
+Upon&nbsp;completetion,&nbsp;it&nbsp;returns&nbsp;the&nbsp;processed&nbsp;image.</tt></dd></dl>
+ <dl><dt><a name="-display"><strong>display</strong></a>(image, image_name, delay=5, scalefactor=2)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;an&nbsp;array&nbsp;of&nbsp;pixel&nbsp;values,&nbsp;`image`,&nbsp;a&nbsp;string&nbsp;<br>
+`image_name,&nbsp;as&nbsp;arguments,&nbsp;as&nbsp;well&nbsp;as&nbsp;an&nbsp;integer&nbsp;`delay`&nbsp;in<br>
+seconds&nbsp;and&nbsp;another&nbsp;integer&nbsp;`scale&nbsp;factor`,&nbsp;both&nbsp;optional<br>
+and&nbsp;defaulting&nbsp;to&nbsp;5&nbsp;and&nbsp;2&nbsp;respectively.<br>
+&nbsp;<br>
+It&nbsp;scales&nbsp;the&nbsp;image&nbsp;provided&nbsp;by&nbsp;the&nbsp;inverse&nbsp;of&nbsp;the&nbsp;scale&nbsp;factor&nbsp;and<br>
+shows&nbsp;it&nbsp;for&nbsp;the&nbsp;amount&nbsp;of&nbsp;time&nbsp;specified&nbsp;by&nbsp;the&nbsp;delay&nbsp;or,&nbsp;optionally<br>
+if&nbsp;the&nbsp;delay&nbsp;is&nbsp;specified&nbsp;to&nbsp;be&nbsp;-1,&nbsp;it&nbsp;shows&nbsp;the&nbsp;image&nbsp;until&nbsp;input<br>
+by&nbsp;the&nbsp;user&nbsp;through&nbsp;a&nbsp;keyboard.<br>
+&nbsp;<br>
+Upon&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;specified&nbsp;amount&nbsp;of&nbsp;time&nbsp;or&nbsp;user&nbsp;input,<br>
+all&nbsp;windows&nbsp;are&nbsp;closed&nbsp;and&nbsp;the&nbsp;function&nbsp;ends,&nbsp;returning&nbsp;nothing.</tt></dd></dl>
+ <dl><dt><a name="-process"><strong>process</strong></a>(image, show=False, delay=-1)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;in&nbsp;an&nbsp;array&nbsp;of&nbsp;pixel&nbsp;values,&nbsp;`image`,&nbsp;<br>
+as&nbsp;argument,&nbsp;a&nbsp;boolean&nbsp;`show`&nbsp;and&nbsp;an&nbsp;integer&nbsp;`delay`.<br>
+&nbsp;<br>
+The&nbsp;image&nbsp;will&nbsp;be&nbsp;processed,&nbsp;undergoing&nbsp;an&nbsp;increase&nbsp;in&nbsp;contrast,<br>
+NDVI&nbsp;calculation&nbsp;and&nbsp;another&nbsp;increase&nbsp;in&nbsp;contrast.<br>
+&nbsp;<br>
+If&nbsp;`show`&nbsp;is&nbsp;True,&nbsp;the&nbsp;image&nbsp;will&nbsp;be&nbsp;displayed&nbsp;at&nbsp;each&nbsp;processing<br>
+step,&nbsp;including&nbsp;the&nbsp;original&nbsp;image,&nbsp;for&nbsp;the&nbsp;amount&nbsp;of&nbsp;time&nbsp;(seconds)<br>
+specified&nbsp;by&nbsp;the&nbsp;`delay`&nbsp;argument,&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+If&nbsp;`delay`&nbsp;assumes&nbsp;a&nbsp;value&nbsp;of&nbsp;-1,&nbsp;the&nbsp;images&nbsp;will&nbsp;be&nbsp;shown&nbsp;until<br>
+input&nbsp;is&nbsp;given&nbsp;by&nbsp;the&nbsp;user.</tt></dd></dl>
+ <dl><dt><a name="-process_all"><strong>process_all</strong></a>(base_folder)</dt><dd><tt>This&nbsp;funcion&nbsp;takes&nbsp;a&nbsp;directory&nbsp;path,&nbsp;`base_folder`,&nbsp;as&nbsp;an&nbsp;argument.<br>
+Looping&nbsp;through&nbsp;every&nbsp;file&nbsp;and&nbsp;folder&nbsp;in&nbsp;the&nbsp;specified&nbsp;directory<br>
+(without&nbsp;recursiveness),&nbsp;for&nbsp;every&nbsp;file&nbsp;with&nbsp;extension&nbsp;'.jpg'&nbsp;or<br>
+'.jpeg',&nbsp;making&nbsp;sure&nbsp;not&nbsp;to&nbsp;process&nbsp;the&nbsp;same&nbsp;image&nbsp;twice&nbsp;or&nbsp;process<br>
+an&nbsp;already&nbsp;NDVI&nbsp;image,&nbsp;it'll&nbsp;be&nbsp;processed&nbsp;into&nbsp;a&nbsp;greyscale&nbsp;NDVI<br>
+image,&nbsp;which&nbsp;is&nbsp;saved&nbsp;in&nbsp;the&nbsp;same&nbsp;directory&nbsp;with&nbsp;a&nbsp;filename&nbsp;of<br>
+the&nbsp;form&nbsp;`{filename}_ndvi.png`,&nbsp;where&nbsp;filename&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the<br>
+original&nbsp;image.<br>
+&nbsp;<br>
+A&nbsp;processed&nbsp;image&nbsp;will&nbsp;then&nbsp;be&nbsp;colour&nbsp;mapped,&nbsp;again,&nbsp;checking&nbsp;if&nbsp;it<br>
+has&nbsp;been&nbsp;colour&nbsp;mapped&nbsp;before,&nbsp;and&nbsp;the&nbsp;resulting&nbsp;image&nbsp;will&nbsp;be&nbsp;written<br>
+to&nbsp;the&nbsp;`base_folder`&nbsp;directory&nbsp;with&nbsp;the&nbsp;filename&nbsp;with&nbsp;the&nbsp;structure<br>
+`{filename}_ndvi_cm.png`,&nbsp;where&nbsp;filename&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;original<br>
+unprocessed&nbsp;image.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;done&nbsp;continuously&nbsp;and&nbsp;without&nbsp;user&nbsp;input,&nbsp;with&nbsp;the&nbsp;elapsed<br>
+time&nbsp;being&nbsp;calculated&nbsp;and&nbsp;printed&nbsp;to&nbsp;the&nbsp;console&nbsp;upon&nbsp;the<br>
+termination&nbsp;of&nbsp;the&nbsp;loop.</tt></dd></dl>
+ <dl><dt><a name="-sleep"><strong>sleep</strong></a>(...)</dt><dd><tt><a href="#-sleep">sleep</a>(seconds)<br>
+&nbsp;<br>
+Delay&nbsp;execution&nbsp;for&nbsp;a&nbsp;given&nbsp;number&nbsp;of&nbsp;seconds.&nbsp;&nbsp;The&nbsp;argument&nbsp;may&nbsp;be<br>
+a&nbsp;floating&nbsp;point&nbsp;number&nbsp;for&nbsp;subsecond&nbsp;precision.</tt></dd></dl>
+</td></tr></table>
+</body></html>

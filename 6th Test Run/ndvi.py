@@ -7,7 +7,7 @@ from datetime import datetime
 import fastiecm
 
 
-def display(image, image_name, delay=5, scalefactor=2):
+def display(image, image_name, delay=5, scale_factor=2):
     """
     This function takes an array of pixel values, `image`, a string 
     `image_name, as arguments, as well as an integer `delay` in
@@ -25,8 +25,8 @@ def display(image, image_name, delay=5, scalefactor=2):
     image = np.array(image, dtype=float)/float(255)
 
     shape = image.shape
-    height = int(shape[0]/scalefactor)
-    width = int(shape[1]/scalefactor)
+    height = int(shape[0]/scale_factor)
+    width = int(shape[1]/scale_factor)
     image = cv2.resize(image, (width, height))
     cv2.namedWindow(image_name)
     cv2.imshow(image_name, image)
@@ -37,7 +37,7 @@ def display(image, image_name, delay=5, scalefactor=2):
     cv2.destroyAllWindows()
 
 
-def contrast_stretch(im):
+def contrast_stretch(image):
     """
     This function takes in an array of pixel values, `image` as argument
     and, taking into account the min and max values of the pixels, it
@@ -46,13 +46,13 @@ def contrast_stretch(im):
 
     Upon completetion, it returns the processed image.
     """
-    in_min = np.percentile(im, 5)
-    in_max = np.percentile(im, 95)
+    in_min = np.percentile(image, 5)
+    in_max = np.percentile(image, 95)
 
     out_min = 0.0
     out_max = 255.0
 
-    out = im - in_min
+    out = image - in_min
 
     out *= ((out_min-out_max) / (in_min-in_max))
     out += in_min
@@ -108,7 +108,7 @@ def process(image, show=False, delay=-1):
 
 def colour_map(image, cm=fastiecm.fastiecm):
     """
-    This function takes as argument a pixel value array, `image` and a
+    This function takes as argument a pixel value array, `image`, and a
     colour map, defaulting to the fastie colour map.
 
     It returns the image as colour mapped in accordance to the provided
@@ -149,21 +149,25 @@ def process_all(base_folder):
             original = cv2.imread(str(base_folder / str(image)))
 
             filename, extension = image.split(".", 1)
-            if filename + "_ndvi.png" not in files and "ndvi" not in filename:
+            if (filename + "_ndvi.png" not in files
+                    and "ndvi" not in filename):
                 print(f"processing {filename}")
                 ndvi_contrasted = process(original)
                 cv2.imwrite(
-                    str(base_folder / str(filename + '_ndvi.png')), ndvi_contrasted)
-                cv2.imwrite(
-                    str(base_folder / str(filename + '_ndvi_cm.png')), colour_map(ndvi_contrasted))
-            elif filename + "_ndvi_cm.png" not in files and "ndvi" in filename:
-                cv2.imwrite(
-                    str(base_folder / str(filename + '_cm.png')), colour_map(original))
-            elif filename + "_ndvi_cm.png" not in files and "ndvi" not in filename:
+                    str(base_folder / str(filename + '_ndvi.png')),
+                    ndvi_contrasted)
+                cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
+                            colour_map(ndvi_contrasted))
+            elif (filename + "_ndvi_cm.png" not in files
+                  and "ndvi" in filename):
+                cv2.imwrite(str(base_folder / str(filename + '_cm.png')),
+                            colour_map(original))
+            elif (filename + "_ndvi_cm.png" not in files
+                  and "ndvi" not in filename):
                 processed = cv2.imread(
                     str(base_folder / str(filename + "_ndvi.png")))
-                cv2.imwrite(
-                    str(base_folder / str(filename + '_ndvi_cm.png')), colour_map(processed))
+                cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
+                            colour_map(processed))
     finish_time = datetime.now()
     elapsed = finish_time - start_time
     print(elapsed)
