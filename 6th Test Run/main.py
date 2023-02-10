@@ -4,7 +4,24 @@ from time import sleep, perf_counter
 from orbit import ISS
 from pathlib import Path
 from datetime import datetime, timedelta
+import csv
 import ndvi
+
+
+def create_csv_file(data_file):
+    """Create a new CSV file and add the header row"""
+    with open(data_file, 'w') as f:
+        writer = csv.writer(f, delimiter=';')
+        header = ("Timestamp", "Filename", "Latitude",
+                  "North/South", "Longitude", "East/West")
+        writer.writerow(header)
+
+
+def add_csv_data(data_file, data):
+    """Add a row of data to the data_file CSV"""
+    with open(data_file, 'a') as f:
+        writer = csv.writer(f, delimiter=';')
+        writer.writerow(data)
 
 
 def convert(angle):
@@ -52,6 +69,7 @@ total_time = 10
 t = open(str(base_folder / "log.txt"), 'a')
 t.write(f"Start Time: {start_time}\n")
 
+create_csv_file(img_data_file)
 
 for i in range(int(total_time*60/loop_time)):
     st = perf_counter()  # start time of the loop
@@ -69,8 +87,9 @@ for i in range(int(total_time*60/loop_time)):
         northsouth = "S" if south else "N"
         eastwest = "W" if west else "E"
         photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-        df.write(
-            f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
+
+        add_csv_data(
+            df, f"{photo_timestamp}; image_{i:03d}.jpg; {lat}; {northsouth}; {long}; {eastwest} \n")
 
         # dump the buffer into the file and write it to the disk
         df.flush()
@@ -98,3 +117,8 @@ t.write(f"Total time: {minutes} min {seconds} s\n")
 t.flush
 os.fsync(t.fileno())
 t.close()
+
+
+# Built with code provided by the Raspberry Pi Foundation, namely that present on the following website:
+# https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment
+# Formatted in accordance to the pep8 standard
