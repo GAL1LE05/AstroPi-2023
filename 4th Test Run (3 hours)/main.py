@@ -54,7 +54,7 @@ t.write(f"Start Time: {start_time}\n")
 for i in range(3*60-4):
     st = perf_counter()  # start time of the loop
     now_time = datetime.now()
-    if now_time >= start_time + timedelta(hours=3):
+    if now_time >= start_time + timedelta(minutes=179):
         break
     with open(img_data_file, 'a') as df:
         # outputs image with filename image_xxx.jpg
@@ -89,6 +89,7 @@ finish_time = datetime.now()
 elapsed = finish_time - start_time
 print(elapsed)
 minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
+t.write(f"Start Time: {start_time}\n")
 print(f"{minutes} minutes and {seconds} seconds have passed")
 t.write(f"Total time: {minutes} min {seconds} s\n")
 t.flush
