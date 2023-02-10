@@ -351,4 +351,4 @@ Processing no. 174 took 0 minutes and 35 seconds to complete
 Cycle took 60.57 seconds to complete
 Processing no. 175 took 0 minutes and 35 seconds to complete
 Cycle took 60.80 seconds to complete
-Total time: -179 min 0 s
+Total time: 179 min 0 s
