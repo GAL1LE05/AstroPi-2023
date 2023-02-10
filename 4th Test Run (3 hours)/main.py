@@ -48,7 +48,7 @@ start_time = datetime.now()
 now_time = datetime.now()
 
 t = open(str(base_folder / "log.txt"), 'a')
-t.write(f"Start Time: {start_time}")
+t.write(f"Start Time: {start_time}\n")
 
 
 for i in range(3*60-4):
@@ -74,13 +74,15 @@ for i in range(3*60-4):
         df.flush()
         os.fsync(df.fileno())
     min, sec = ndvi.process_all(base_folder)
-    t.write(f"Processing no. {i} took {min} minutes and {sec} seconds to complete")
+    t.write(f"Processing no. {i} took {min} minutes and {sec} seconds to complete\n")
     if min < 1 and sec < 60:
         sleep(60 - sec)
     else:
         pass
     et = perf_counter()  # end time of the loop
-    t.write(f"Cycle took {et-st:0.2f} seconds to complete")
+    t.write(f"Cycle took {et-st:0.2f} seconds to complete\n")
+    t.flush
+    os.fsync(t.fileno())
 
 camera.close()
 finish_time = datetime.now()
@@ -88,7 +90,7 @@ elapsed = start_time - finish_time
 print(elapsed)
 minutes, seconds = divmod(elapsed.days * 60*60*24 + elapsed.seconds, 60)
 print(f"{minutes} minutes and {seconds} seconds have passed")
-t.write(f"Total time: {minutes} min {seconds} s")
+t.write(f"Total time: {minutes} min {seconds} s\n")
 t.flush
 os.fsync(t.fileno())
 t.close()
