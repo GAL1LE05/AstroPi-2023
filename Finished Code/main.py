@@ -100,31 +100,26 @@ for i in range(int(total_time*60/loop_time)-1):
     if now_time >= start_time + timedelta(minutes=total_time-1):
         break
     try:
-        # Open the data file in append mode
-        with open(img_data_file, 'a') as data_file:
-            # Capture a picture and save it with filename of the form
-            # `image_xxx.jpg`.
-            capture(camera, f'{base_folder}/image_{i:03d}.jpg')
 
-            # Get the coordinates of the ISS and convert them to the
-            # desired format.
-            point = ISS.coordinates()
-            south, lat = convert(point.latitude)
-            west, long = convert(point.longitude)
-            northsouth = "S" if south else "N"
-            eastwest = "W" if west else "E"
-            # Get the time at which the photo was taken and format it.
-            photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+        # Capture a picture and save it with filename of the form
+        # `image_xxx.jpg`.
+        capture(camera, f'{base_folder}/image_{i:03d}.jpg')
 
-            # Save the data relating to the photo
-            add_csv_data(
-                data_file, (photo_timestamp, f"image_{i:03d}.jpg", lat,
-                northsouth, long, eastwest))
+        # Get the coordinates of the ISS and convert them to the
+        # desired format.
+        point = ISS.coordinates()
+        south, lat = convert(point.latitude)
+        west, long = convert(point.longitude)
+        northsouth = "S" if south else "N"
+        eastwest = "W" if west else "E"
+        # Get the time at which the photo was taken and format it.
+        photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
-            # Write changes to the data file to the disk
-            data_file.flush()
-            os.fsync(data_file.fileno())
-        
+        # Save the data relating to the photo
+        add_csv_data(
+            img_data_file, (photo_timestamp, f"image_{i:03d}.jpg", lat,
+                            northsouth, long, eastwest))
+
         # Process all unprocessed images in the current directory and
         # save the elapsed time to a minutes and seconds pair of
         # variables.
@@ -135,7 +130,7 @@ for i in range(int(total_time*60/loop_time)-1):
         logger.info(
             f"Processing no. {i} took {min} minutes and {sec} seconds to \
             complete\n")
-        
+
         # Check if the desired time for a loop to take has passed.
         # If so, continue. If not, wait for the remaining time.
         if min < 1 and sec < loop_time:
