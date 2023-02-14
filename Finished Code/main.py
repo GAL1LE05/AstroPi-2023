@@ -68,10 +68,17 @@ camera.resolution = (2591, 1944)
 start_time = datetime.now()
 # Get the current time
 now_time = datetime.now()
-# Set the desired time taken per loop in seconds
-loop_time = 50
+
+# Set the desired time taken per loop in seconds.
+# Through testing and estimates, we have concluded that, to take the
+# most advantage of our 3 hour window, taking as many pictures as
+# possible while still having the time to process them all, the ideal
+# loop time should be just above 46.2 seconds.
+# To provide a sufficcient margin for variation and error associated
+# with the approximations made, we decided to set it to 48 seconds
+loop_time = 48
 # Set the total time for the script to run for in minutes
-total_time = 10
+total_time = 180
 
 logfile(str(base_folder / "logfile.log"))
 logger.info(f"Start Time: {start_time}\n")
