@@ -78,7 +78,7 @@ now_time = datetime.now()
 # with the approximations made, we decided to set it to 48 seconds
 loop_time = 48
 # Set the total time for the script to run for in minutes
-total_time = 179
+total_time = 180
 
 logfile(str(base_folder / "logfile.log"))
 logger.info(f"Start Time: {start_time}\n")
