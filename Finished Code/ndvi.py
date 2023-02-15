@@ -149,8 +149,7 @@ def process_all(base_folder):
             original = cv2.imread(str(base_folder / str(image)))
 
             filename, extension = image.split(".", 1)
-            if (filename + "_ndvi.png" not in files
-                    and "ndvi" not in filename):
+            if filename + "_ndvi.png" not in files:
                 print(f"processing {filename}")
                 ndvi_contrasted = process(original)
                 cv2.imwrite(
@@ -158,12 +157,7 @@ def process_all(base_folder):
                     ndvi_contrasted)
                 cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
                             colour_map(ndvi_contrasted))
-            elif (filename + "_ndvi_cm.png" not in files
-                  and "ndvi" in filename):
-                cv2.imwrite(str(base_folder / str(filename + '_cm.png')),
-                            colour_map(original))
-            elif (filename + "_ndvi_cm.png" not in files
-                  and "ndvi" not in filename):
+            elif filename + "_ndvi_cm.png" not in files:
                 processed = cv2.imread(
                     str(base_folder / str(filename + "_ndvi.png")))
                 cv2.imwrite(str(base_folder / str(filename + '_ndvi_cm.png')),
