@@ -115,7 +115,7 @@ for i in range(int(total_time*60/loop_time)-1):
         # Get the time at which the photo was taken and format it.
         photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
-        # Save the data relating to the photo
+        # Save the data relating to the photo to the data file
         add_csv_data(
             img_data_file, (photo_timestamp, f"image_{i:03d}.jpg", lat,
                             northsouth, long, eastwest))
