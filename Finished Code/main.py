@@ -80,9 +80,14 @@ loop_time = 48
 # Set the total time for the script to run for in minutes
 total_time = 180
 
+# Create a logfile and write the start time of the script
+# A blank line is deliberatly left at the end of every event logged
+# in order to improve readability and error correction.
+# The same is not done in any other file.
 logfile(str(base_folder / "logfile.log"))
 logger.info(f"Start Time: {start_time}\n")
 
+# Create a CSV file for image data
 img_data_file = base_folder / "image_data.csv"
 create_csv_file(img_data_file)
 
