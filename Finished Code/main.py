@@ -128,8 +128,8 @@ for i in range(int(total_time*60/loop_time)-1):
         # Log the time necessary for the processing to be completed to
         # the log file.
         logger.info(
-            f"Processing no. {i} took {min} minutes and {sec} seconds to \
-            complete\n")
+            f"Processing no. {i} took {min} minutes and {sec} seconds to "
+            + "complete\n")
 
         # Check if the desired time for a loop to take has passed.
         # If so, continue. If not, wait for the remaining time.
@@ -143,8 +143,8 @@ for i in range(int(total_time*60/loop_time)-1):
 
         # Log the time elapsed during the entire loop to the log file,
         # with two decimal places of precision.
-        logger.info(f"Cycle took {loop_end - loop_start:0.2f} seconds \
-                  to complete\n")
+        logger.info(f"Cycle took {loop_end - loop_start:0.2f} seconds "
+                    + "to complete\n")
     except Exception as e:
         logger.exception(e)
 
@@ -162,8 +162,9 @@ logger.info(f"Total time: {minutes} min {seconds} s\n")
 
 
 # Built with code provided by the Raspberry Pi Foundation, namely that
-# present on the following website:
+# presented on the following website:
 # https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment
+# Consulted on 16/02/2023 at 16:04
 # Written by team Trivials for the 2022/2023 AstroPi
 # Competition - Mission Space Lab.
 # Formatted according to the PEP 8 Style Guide standard for Python code.
