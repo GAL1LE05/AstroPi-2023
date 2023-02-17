@@ -175,7 +175,7 @@ process_all(Path(__file__).parent.resolve())
 # Built with code provided by the Raspberry Pi Foundation, namely that
 # present on the following website:
 # https://projects.raspberrypi.org/en/projects/astropi-ndvi
-# Consulted on 16/02/2023 at 16:04
+# Consulted on 16/02/2023 at   16:04
 # Written by team Trivials for the 2022/2023 AstroPi
 # Competition - Mission Space Lab.
 # Formatted according to the PEP 8 Style Guide standard for Python code.

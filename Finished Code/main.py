@@ -1,4 +1,3 @@
-import os
 from picamera import PiCamera
 from time import sleep, perf_counter
 from orbit import ISS
@@ -94,7 +93,7 @@ create_csv_file(img_data_file)
 
 # Loop for the necessary times to get as close to the total time, in
 # minutes, as possible, with the expected loop duration.
-for i in range(np.floor(total_time*60/loop_time+1)):
+for i in range(int(total_time*60/(loop_time+1))):
     # Get the start time of the loop
     loop_start = perf_counter()
     # Update the current time
@@ -103,56 +102,55 @@ for i in range(np.floor(total_time*60/loop_time+1)):
     # Check if the total time available or more have passed,
     # and if so, break out of the loop. Serves as a second checkpoint
     # to make sure the code doesn't run for more than 3 hours.
-    if now_time >= start_time + timedelta(minutes=total_time-1):
-        break
-    try:
+    if now_time < start_time + timedelta(minutes=total_time-1):
+        try:
 
-        # Capture a picture and save it with filename of the form
-        # `image_xxx.jpg`.
-        capture(camera, f'{base_folder}/image_{i:03d}.jpg')
+            # Capture a picture and save it with filename of the form
+            # `image_xxx.jpg`.
+            capture(camera, f'{base_folder}/image_{i:03d}.jpg')
 
-        # Get the coordinates of the ISS and convert them to the
-        # desired format.
-        point = ISS.coordinates()
-        south, lat = convert(point.latitude)
-        west, long = convert(point.longitude)
-        northsouth = "S" if south else "N"
-        eastwest = "W" if west else "E"
-        # Get the time at which the photo was taken and format it.
-        photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+            # Get the coordinates of the ISS and convert them to the
+            # desired format.
+            point = ISS.coordinates()
+            south, lat = convert(point.latitude)
+            west, long = convert(point.longitude)
+            northsouth = "S" if south else "N"
+            eastwest = "W" if west else "E"
+            # Get the time at which the photo was taken and format it.
+            photo_timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
-        # Save the data relating to the photo to the data file
-        add_csv_data(
-            img_data_file, (photo_timestamp, f"image_{i:03d}.jpg", lat,
-                            northsouth, long, eastwest))
+            # Save the data relating to the photo to the data file
+            add_csv_data(
+                img_data_file, (photo_timestamp, f"image_{i:03d}.jpg", lat,
+                                northsouth, long, eastwest))
 
-        # Process all unprocessed images in the current directory and
-        # save the elapsed time to a minutes and seconds pair of
-        # variables.
-        min, sec = ndvi.process_all(base_folder)
+            # Process all unprocessed images in the current directory and
+            # save the elapsed time to a minutes and seconds pair of
+            # variables.
+            min, sec = ndvi.process_all(base_folder)
 
-        # Log the time necessary for the processing to be completed to
-        # the log file.
-        logger.info(
-            f"Processing no. {i} took {min} minutes and {sec} seconds to "
-            + "complete\n")
+            # Log the time necessary for the processing to be completed to
+            # the log file.
+            logger.info(
+                f"Processing no. {i} took {min} minutes and {sec} seconds to "
+                + "complete\n")
 
-        # Check if the desired time for a loop to take has passed.
-        # If so, continue. If not, wait for the remaining time.
-        if min < 1 and sec < loop_time:
-            sleep(loop_time - sec)
-        else:
-            pass
+            # Check if the desired time for a loop to take has passed.
+            # If so, continue. If not, wait for the remaining time.
+            if min < 1 and sec < loop_time:
+                sleep(loop_time - sec)
+            else:
+                pass
 
-        # Get the end time of the current loop
-        loop_end = perf_counter()
+            # Get the end time of the current loop
+            loop_end = perf_counter()
 
-        # Log the time elapsed during the entire loop to the log file,
-        # with two decimal places of precision.
-        logger.info(f"Cycle took {loop_end - loop_start:0.2f} seconds "
-                    + "to complete\n")
-    except Exception as e:
-        logger.exception(e)
+            # Log the time elapsed during the entire loop to the log file,
+            # with two decimal places of precision.
+            logger.info(f"Cycle took {loop_end - loop_start:0.2f} seconds "
+                        + "to complete\n")
+        except Exception as e:
+            logger.exception(e)
 
 # Close the camera
 camera.close()
