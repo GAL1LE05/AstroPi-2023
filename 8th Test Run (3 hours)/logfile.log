@@ -1,0 +1,886 @@
+[I 230216 16:27:13 main:84] Start Time: 2023-02-16 16:27:13.118214
+    
+[I 230216 16:27:18 main:130] Processing no. 0 took 0 minutes and 5 seconds to complete
+    
+[I 230216 16:28:01 main:146] Cycle took 48.66 seconds to complete
+    
+[I 230216 16:28:07 main:130] Processing no. 1 took 0 minutes and 4 seconds to complete
+    
+[I 230216 16:28:51 main:146] Cycle took 49.50 seconds to complete
+    
+[I 230216 16:28:56 main:130] Processing no. 2 took 0 minutes and 5 seconds to complete
+    
+[I 230216 16:29:40 main:146] Cycle took 48.72 seconds to complete
+    
+[I 230216 16:29:46 main:130] Processing no. 3 took 0 minutes and 5 seconds to complete
+    
+[I 230216 16:30:29 main:146] Cycle took 49.04 seconds to complete
+    
+[I 230216 16:30:35 main:130] Processing no. 4 took 0 minutes and 5 seconds to complete
+    
+[I 230216 16:31:18 main:146] Cycle took 49.42 seconds to complete
+    
+[I 230216 16:31:25 main:130] Processing no. 5 took 0 minutes and 6 seconds to complete
+    
+[I 230216 16:32:07 main:146] Cycle took 49.04 seconds to complete
+    
+[I 230216 16:32:14 main:130] Processing no. 6 took 0 minutes and 6 seconds to complete
+    
+[I 230216 16:32:56 main:146] Cycle took 49.33 seconds to complete
+    
+[I 230216 16:33:04 main:130] Processing no. 7 took 0 minutes and 6 seconds to complete
+    
+[I 230216 16:33:46 main:146] Cycle took 49.39 seconds to complete
+    
+[I 230216 16:33:54 main:130] Processing no. 8 took 0 minutes and 7 seconds to complete
+    
+[I 230216 16:34:35 main:146] Cycle took 48.92 seconds to complete
+    
+[I 230216 16:34:42 main:130] Processing no. 9 took 0 minutes and 7 seconds to complete
+    
+[I 230216 16:35:23 main:146] Cycle took 48.76 seconds to complete
+    
+[I 230216 16:35:31 main:130] Processing no. 10 took 0 minutes and 7 seconds to complete
+    
+[I 230216 16:36:12 main:146] Cycle took 48.71 seconds to complete
+    
+[I 230216 16:36:20 main:130] Processing no. 11 took 0 minutes and 7 seconds to complete
+    
+[I 230216 16:37:01 main:146] Cycle took 48.86 seconds to complete
+    
+[I 230216 16:37:09 main:130] Processing no. 12 took 0 minutes and 7 seconds to complete
+    
+[I 230216 16:37:50 main:146] Cycle took 49.29 seconds to complete
+    
+[I 230216 16:37:59 main:130] Processing no. 13 took 0 minutes and 7 seconds to complete
+    
+[I 230216 16:38:40 main:146] Cycle took 49.50 seconds to complete
+    
+[I 230216 16:38:48 main:130] Processing no. 14 took 0 minutes and 8 seconds to complete
+    
+[I 230216 16:39:28 main:146] Cycle took 48.63 seconds to complete
+    
+[I 230216 16:39:37 main:130] Processing no. 15 took 0 minutes and 7 seconds to complete
+    
+[I 230216 16:40:18 main:146] Cycle took 49.50 seconds to complete
+    
+[I 230216 16:40:27 main:130] Processing no. 16 took 0 minutes and 8 seconds to complete
+    
+[I 230216 16:41:07 main:146] Cycle took 49.05 seconds to complete
+    
+[I 230216 16:41:16 main:130] Processing no. 17 took 0 minutes and 8 seconds to complete
+    
+[I 230216 16:41:56 main:146] Cycle took 49.19 seconds to complete
+    
+[I 230216 16:42:05 main:130] Processing no. 18 took 0 minutes and 8 seconds to complete
+    
+[I 230216 16:42:45 main:146] Cycle took 49.10 seconds to complete
+    
+[I 230216 16:42:55 main:130] Processing no. 19 took 0 minutes and 9 seconds to complete
+    
+[I 230216 16:43:34 main:146] Cycle took 48.62 seconds to complete
+    
+[I 230216 16:43:44 main:130] Processing no. 20 took 0 minutes and 9 seconds to complete
+    
+[I 230216 16:44:23 main:146] Cycle took 48.73 seconds to complete
+    
+[I 230216 16:44:33 main:130] Processing no. 21 took 0 minutes and 9 seconds to complete
+    
+[I 230216 16:45:12 main:146] Cycle took 48.97 seconds to complete
+    
+[I 230216 16:45:22 main:130] Processing no. 22 took 0 minutes and 9 seconds to complete
+    
+[I 230216 16:46:01 main:146] Cycle took 49.08 seconds to complete
+    
+[I 230216 16:46:11 main:130] Processing no. 23 took 0 minutes and 9 seconds to complete
+    
+[I 230216 16:46:50 main:146] Cycle took 49.11 seconds to complete
+    
+[I 230216 16:47:00 main:130] Processing no. 24 took 0 minutes and 9 seconds to complete
+    
+[I 230216 16:47:39 main:146] Cycle took 49.39 seconds to complete
+    
+[I 230216 16:47:50 main:130] Processing no. 25 took 0 minutes and 10 seconds to complete
+    
+[I 230216 16:48:28 main:146] Cycle took 48.79 seconds to complete
+    
+[I 230216 16:48:39 main:130] Processing no. 26 took 0 minutes and 10 seconds to complete
+    
+[I 230216 16:49:17 main:146] Cycle took 48.73 seconds to complete
+    
+[I 230216 16:49:28 main:130] Processing no. 27 took 0 minutes and 10 seconds to complete
+    
+[I 230216 16:50:06 main:146] Cycle took 48.97 seconds to complete
+    
+[I 230216 16:50:17 main:130] Processing no. 28 took 0 minutes and 10 seconds to complete
+    
+[I 230216 16:50:55 main:146] Cycle took 49.06 seconds to complete
+    
+[I 230216 16:51:06 main:130] Processing no. 29 took 0 minutes and 10 seconds to complete
+    
+[I 230216 16:51:44 main:146] Cycle took 49.45 seconds to complete
+    
+[I 230216 16:51:56 main:130] Processing no. 30 took 0 minutes and 11 seconds to complete
+    
+[I 230216 16:52:33 main:146] Cycle took 48.55 seconds to complete
+    
+[I 230216 16:52:44 main:130] Processing no. 31 took 0 minutes and 11 seconds to complete
+    
+[I 230216 16:53:21 main:146] Cycle took 48.61 seconds to complete
+    
+[I 230216 16:53:33 main:130] Processing no. 32 took 0 minutes and 11 seconds to complete
+    
+[I 230216 16:54:10 main:146] Cycle took 48.85 seconds to complete
+    
+[I 230216 16:54:22 main:130] Processing no. 33 took 0 minutes and 11 seconds to complete
+    
+[I 230216 16:54:59 main:146] Cycle took 49.14 seconds to complete
+    
+[I 230216 16:55:12 main:130] Processing no. 34 took 0 minutes and 11 seconds to complete
+    
+[I 230216 16:55:49 main:146] Cycle took 49.44 seconds to complete
+    
+[I 230216 16:56:01 main:130] Processing no. 35 took 0 minutes and 11 seconds to complete
+    
+[I 230216 16:56:38 main:146] Cycle took 49.37 seconds to complete
+    
+[I 230216 16:56:51 main:130] Processing no. 36 took 0 minutes and 12 seconds to complete
+    
+[I 230216 16:57:27 main:146] Cycle took 48.60 seconds to complete
+    
+[I 230216 16:57:39 main:130] Processing no. 37 took 0 minutes and 12 seconds to complete
+    
+[I 230216 16:58:16 main:146] Cycle took 48.78 seconds to complete
+    
+[I 230216 16:58:28 main:130] Processing no. 38 took 0 minutes and 12 seconds to complete
+    
+[I 230216 16:59:04 main:146] Cycle took 48.92 seconds to complete
+    
+[I 230216 16:59:18 main:130] Processing no. 39 took 0 minutes and 12 seconds to complete
+    
+[I 230216 16:59:54 main:146] Cycle took 49.32 seconds to complete
+    
+[I 230216 17:00:07 main:130] Processing no. 40 took 0 minutes and 12 seconds to complete
+    
+[I 230216 17:00:43 main:146] Cycle took 49.12 seconds to complete
+    
+[I 230216 17:00:56 main:130] Processing no. 41 took 0 minutes and 13 seconds to complete
+    
+[I 230216 17:01:31 main:146] Cycle took 48.59 seconds to complete
+    
+[I 230216 17:01:45 main:130] Processing no. 42 took 0 minutes and 13 seconds to complete
+    
+[I 230216 17:02:20 main:146] Cycle took 48.55 seconds to complete
+    
+[I 230216 17:02:34 main:130] Processing no. 43 took 0 minutes and 13 seconds to complete
+    
+[I 230216 17:03:09 main:146] Cycle took 48.88 seconds to complete
+    
+[I 230216 17:03:23 main:130] Processing no. 44 took 0 minutes and 13 seconds to complete
+    
+[I 230216 17:03:58 main:146] Cycle took 48.89 seconds to complete
+    
+[I 230216 17:04:12 main:130] Processing no. 45 took 0 minutes and 13 seconds to complete
+    
+[I 230216 17:04:47 main:146] Cycle took 49.21 seconds to complete
+    
+[I 230216 17:05:01 main:130] Processing no. 46 took 0 minutes and 13 seconds to complete
+    
+[I 230216 17:05:36 main:146] Cycle took 49.40 seconds to complete
+    
+[I 230216 17:05:51 main:130] Processing no. 47 took 0 minutes and 13 seconds to complete
+    
+[I 230216 17:06:26 main:146] Cycle took 49.53 seconds to complete
+    
+[I 230216 17:06:41 main:130] Processing no. 48 took 0 minutes and 14 seconds to complete
+    
+[I 230216 17:07:15 main:146] Cycle took 48.64 seconds to complete
+    
+[I 230216 17:07:29 main:130] Processing no. 49 took 0 minutes and 14 seconds to complete
+    
+[I 230216 17:08:03 main:146] Cycle took 48.72 seconds to complete
+    
+[I 230216 17:08:18 main:130] Processing no. 50 took 0 minutes and 14 seconds to complete
+    
+[I 230216 17:08:52 main:146] Cycle took 49.02 seconds to complete
+    
+[I 230216 17:09:07 main:130] Processing no. 51 took 0 minutes and 14 seconds to complete
+    
+[I 230216 17:09:41 main:146] Cycle took 49.19 seconds to complete
+    
+[I 230216 17:09:57 main:130] Processing no. 52 took 0 minutes and 15 seconds to complete
+    
+[I 230216 17:10:30 main:146] Cycle took 48.59 seconds to complete
+    
+[I 230216 17:10:46 main:130] Processing no. 53 took 0 minutes and 14 seconds to complete
+    
+[I 230216 17:11:20 main:146] Cycle took 49.55 seconds to complete
+    
+[I 230216 17:11:35 main:130] Processing no. 54 took 0 minutes and 15 seconds to complete
+    
+[I 230216 17:12:08 main:146] Cycle took 48.65 seconds to complete
+    
+[I 230216 17:12:24 main:130] Processing no. 55 took 0 minutes and 15 seconds to complete
+    
+[I 230216 17:12:57 main:146] Cycle took 48.89 seconds to complete
+    
+[I 230216 17:13:13 main:130] Processing no. 56 took 0 minutes and 15 seconds to complete
+    
+[I 230216 17:13:46 main:146] Cycle took 48.88 seconds to complete
+    
+[I 230216 17:14:02 main:130] Processing no. 57 took 0 minutes and 15 seconds to complete
+    
+[I 230216 17:14:35 main:146] Cycle took 49.15 seconds to complete
+    
+[I 230216 17:14:52 main:130] Processing no. 58 took 0 minutes and 15 seconds to complete
+    
+[I 230216 17:15:25 main:146] Cycle took 49.33 seconds to complete
+    
+[I 230216 17:15:41 main:130] Processing no. 59 took 0 minutes and 15 seconds to complete
+    
+[I 230216 17:16:14 main:146] Cycle took 49.43 seconds to complete
+    
+[I 230216 17:16:31 main:130] Processing no. 60 took 0 minutes and 16 seconds to complete
+    
+[I 230216 17:17:03 main:146] Cycle took 48.89 seconds to complete
+    
+[I 230216 17:17:20 main:130] Processing no. 61 took 0 minutes and 16 seconds to complete
+    
+[I 230216 17:17:52 main:146] Cycle took 48.92 seconds to complete
+    
+[I 230216 17:18:09 main:130] Processing no. 62 took 0 minutes and 16 seconds to complete
+    
+[I 230216 17:18:41 main:146] Cycle took 48.99 seconds to complete
+    
+[I 230216 17:18:58 main:130] Processing no. 63 took 0 minutes and 16 seconds to complete
+    
+[I 230216 17:19:30 main:146] Cycle took 49.22 seconds to complete
+    
+[I 230216 17:19:47 main:130] Processing no. 64 took 0 minutes and 16 seconds to complete
+    
+[I 230216 17:20:19 main:146] Cycle took 49.43 seconds to complete
+    
+[I 230216 17:20:37 main:130] Processing no. 65 took 0 minutes and 17 seconds to complete
+    
+[I 230216 17:21:08 main:146] Cycle took 48.71 seconds to complete
+    
+[I 230216 17:21:26 main:130] Processing no. 66 took 0 minutes and 17 seconds to complete
+    
+[I 230216 17:21:57 main:146] Cycle took 48.57 seconds to complete
+    
+[I 230216 17:22:14 main:130] Processing no. 67 took 0 minutes and 17 seconds to complete
+    
+[I 230216 17:22:46 main:146] Cycle took 48.83 seconds to complete
+    
+[I 230216 17:23:03 main:130] Processing no. 68 took 0 minutes and 17 seconds to complete
+    
+[I 230216 17:23:34 main:146] Cycle took 48.73 seconds to complete
+    
+[I 230216 17:23:52 main:130] Processing no. 69 took 0 minutes and 17 seconds to complete
+    
+[I 230216 17:24:23 main:146] Cycle took 49.22 seconds to complete
+    
+[I 230216 17:24:42 main:130] Processing no. 70 took 0 minutes and 17 seconds to complete
+    
+[I 230216 17:25:13 main:146] Cycle took 49.40 seconds to complete
+    
+[I 230216 17:25:31 main:130] Processing no. 71 took 0 minutes and 17 seconds to complete
+    
+[I 230216 17:26:02 main:146] Cycle took 49.41 seconds to complete
+    
+[I 230216 17:26:21 main:130] Processing no. 72 took 0 minutes and 18 seconds to complete
+    
+[I 230216 17:26:51 main:146] Cycle took 48.81 seconds to complete
+    
+[I 230216 17:27:10 main:130] Processing no. 73 took 0 minutes and 18 seconds to complete
+    
+[I 230216 17:27:40 main:146] Cycle took 49.06 seconds to complete
+    
+[I 230216 17:27:59 main:130] Processing no. 74 took 0 minutes and 18 seconds to complete
+    
+[I 230216 17:28:29 main:146] Cycle took 49.13 seconds to complete
+    
+[I 230216 17:28:49 main:130] Processing no. 75 took 0 minutes and 18 seconds to complete
+    
+[I 230216 17:29:19 main:146] Cycle took 49.35 seconds to complete
+    
+[I 230216 17:29:38 main:130] Processing no. 76 took 0 minutes and 18 seconds to complete
+    
+[I 230216 17:30:08 main:146] Cycle took 49.51 seconds to complete
+    
+[I 230216 17:30:28 main:130] Processing no. 77 took 0 minutes and 19 seconds to complete
+    
+[I 230216 17:30:57 main:146] Cycle took 48.61 seconds to complete
+    
+[I 230216 17:31:17 main:130] Processing no. 78 took 0 minutes and 19 seconds to complete
+    
+[I 230216 17:31:46 main:146] Cycle took 49.11 seconds to complete
+    
+[I 230216 17:32:06 main:130] Processing no. 79 took 0 minutes and 19 seconds to complete
+    
+[I 230216 17:32:35 main:146] Cycle took 48.74 seconds to complete
+    
+[I 230216 17:32:55 main:130] Processing no. 80 took 0 minutes and 19 seconds to complete
+    
+[I 230216 17:33:24 main:146] Cycle took 49.23 seconds to complete
+    
+[I 230216 17:33:44 main:130] Processing no. 81 took 0 minutes and 19 seconds to complete
+    
+[I 230216 17:34:13 main:146] Cycle took 49.38 seconds to complete
+    
+[I 230216 17:34:34 main:130] Processing no. 82 took 0 minutes and 20 seconds to complete
+    
+[I 230216 17:35:02 main:146] Cycle took 48.58 seconds to complete
+    
+[I 230216 17:35:22 main:130] Processing no. 83 took 0 minutes and 20 seconds to complete
+    
+[I 230216 17:35:50 main:146] Cycle took 48.63 seconds to complete
+    
+[I 230216 17:36:11 main:130] Processing no. 84 took 0 minutes and 20 seconds to complete
+    
+[I 230216 17:36:39 main:146] Cycle took 48.87 seconds to complete
+    
+[I 230216 17:37:00 main:130] Processing no. 85 took 0 minutes and 20 seconds to complete
+    
+[I 230216 17:37:28 main:146] Cycle took 48.92 seconds to complete
+    
+[I 230216 17:37:49 main:130] Processing no. 86 took 0 minutes and 20 seconds to complete
+    
+[I 230216 17:38:17 main:146] Cycle took 49.13 seconds to complete
+    
+[I 230216 17:38:38 main:130] Processing no. 87 took 0 minutes and 20 seconds to complete
+    
+[I 230216 17:39:06 main:146] Cycle took 49.11 seconds to complete
+    
+[I 230216 17:39:28 main:130] Processing no. 88 took 0 minutes and 20 seconds to complete
+    
+[I 230216 17:39:56 main:146] Cycle took 49.31 seconds to complete
+    
+[I 230216 17:40:17 main:130] Processing no. 89 took 0 minutes and 21 seconds to complete
+    
+[I 230216 17:40:45 main:146] Cycle took 48.72 seconds to complete
+    
+[I 230216 17:41:06 main:130] Processing no. 90 took 0 minutes and 21 seconds to complete
+    
+[I 230216 17:41:33 main:146] Cycle took 48.75 seconds to complete
+    
+[I 230216 17:41:55 main:130] Processing no. 91 took 0 minutes and 21 seconds to complete
+    
+[I 230216 17:42:22 main:146] Cycle took 49.17 seconds to complete
+    
+[I 230216 17:42:45 main:130] Processing no. 92 took 0 minutes and 21 seconds to complete
+    
+[I 230216 17:43:12 main:146] Cycle took 49.16 seconds to complete
+    
+[I 230216 17:43:34 main:130] Processing no. 93 took 0 minutes and 21 seconds to complete
+    
+[I 230216 17:44:01 main:146] Cycle took 49.12 seconds to complete
+    
+[I 230216 17:44:23 main:130] Processing no. 94 took 0 minutes and 22 seconds to complete
+    
+[I 230216 17:44:49 main:146] Cycle took 48.54 seconds to complete
+    
+[I 230216 17:45:12 main:130] Processing no. 95 took 0 minutes and 21 seconds to complete
+    
+[I 230216 17:45:39 main:146] Cycle took 49.51 seconds to complete
+    
+[I 230216 17:46:02 main:130] Processing no. 96 took 0 minutes and 22 seconds to complete
+    
+[I 230216 17:46:28 main:146] Cycle took 48.82 seconds to complete
+    
+[I 230216 17:46:51 main:130] Processing no. 97 took 0 minutes and 22 seconds to complete
+    
+[I 230216 17:47:17 main:146] Cycle took 48.96 seconds to complete
+    
+[I 230216 17:47:40 main:130] Processing no. 98 took 0 minutes and 22 seconds to complete
+    
+[I 230216 17:48:06 main:146] Cycle took 49.31 seconds to complete
+    
+[I 230216 17:48:29 main:130] Processing no. 99 took 0 minutes and 22 seconds to complete
+    
+[I 230216 17:48:55 main:146] Cycle took 49.32 seconds to complete
+    
+[I 230216 17:49:18 main:130] Processing no. 100 took 0 minutes and 22 seconds to complete
+    
+[I 230216 17:49:44 main:146] Cycle took 49.03 seconds to complete
+    
+[I 230216 17:50:08 main:130] Processing no. 101 took 0 minutes and 22 seconds to complete
+    
+[I 230216 17:50:34 main:146] Cycle took 49.43 seconds to complete
+    
+[I 230216 17:50:58 main:130] Processing no. 102 took 0 minutes and 23 seconds to complete
+    
+[I 230216 17:51:23 main:146] Cycle took 48.92 seconds to complete
+    
+[I 230216 17:51:46 main:130] Processing no. 103 took 0 minutes and 23 seconds to complete
+    
+[I 230216 17:52:11 main:146] Cycle took 48.89 seconds to complete
+    
+[I 230216 17:52:36 main:130] Processing no. 104 took 0 minutes and 23 seconds to complete
+    
+[I 230216 17:53:01 main:146] Cycle took 49.11 seconds to complete
+    
+[I 230216 17:53:25 main:130] Processing no. 105 took 0 minutes and 23 seconds to complete
+    
+[I 230216 17:53:50 main:146] Cycle took 49.07 seconds to complete
+    
+[I 230216 17:54:14 main:130] Processing no. 106 took 0 minutes and 23 seconds to complete
+    
+[I 230216 17:54:39 main:146] Cycle took 49.30 seconds to complete
+    
+[I 230216 17:55:04 main:130] Processing no. 107 took 0 minutes and 24 seconds to complete
+    
+[I 230216 17:55:28 main:146] Cycle took 48.67 seconds to complete
+    
+[I 230216 17:55:52 main:130] Processing no. 108 took 0 minutes and 24 seconds to complete
+    
+[I 230216 17:56:16 main:146] Cycle took 48.58 seconds to complete
+    
+[I 230216 17:56:41 main:130] Processing no. 109 took 0 minutes and 24 seconds to complete
+    
+[I 230216 17:57:05 main:146] Cycle took 48.73 seconds to complete
+    
+[I 230216 17:57:30 main:130] Processing no. 110 took 0 minutes and 24 seconds to complete
+    
+[I 230216 17:57:54 main:146] Cycle took 49.17 seconds to complete
+    
+[I 230216 17:58:19 main:130] Processing no. 111 took 0 minutes and 24 seconds to complete
+    
+[I 230216 17:58:43 main:146] Cycle took 48.96 seconds to complete
+    
+[I 230216 17:59:08 main:130] Processing no. 112 took 0 minutes and 24 seconds to complete
+    
+[I 230216 17:59:32 main:146] Cycle took 49.32 seconds to complete
+    
+[I 230216 17:59:58 main:130] Processing no. 113 took 0 minutes and 24 seconds to complete
+    
+[I 230216 18:00:22 main:146] Cycle took 49.35 seconds to complete
+    
+[I 230216 18:00:47 main:130] Processing no. 114 took 0 minutes and 24 seconds to complete
+    
+[I 230216 18:01:11 main:146] Cycle took 49.42 seconds to complete
+    
+[I 230216 18:01:37 main:130] Processing no. 115 took 0 minutes and 25 seconds to complete
+    
+[I 230216 18:02:00 main:146] Cycle took 48.90 seconds to complete
+    
+[I 230216 18:02:26 main:130] Processing no. 116 took 0 minutes and 25 seconds to complete
+    
+[I 230216 18:02:49 main:146] Cycle took 48.92 seconds to complete
+    
+[I 230216 18:03:15 main:130] Processing no. 117 took 0 minutes and 25 seconds to complete
+    
+[I 230216 18:03:38 main:146] Cycle took 49.10 seconds to complete
+    
+[I 230216 18:04:04 main:130] Processing no. 118 took 0 minutes and 25 seconds to complete
+    
+[I 230216 18:04:27 main:146] Cycle took 49.05 seconds to complete
+    
+[I 230216 18:04:54 main:130] Processing no. 119 took 0 minutes and 26 seconds to complete
+    
+[I 230216 18:05:16 main:146] Cycle took 48.56 seconds to complete
+    
+[I 230216 18:05:42 main:130] Processing no. 120 took 0 minutes and 25 seconds to complete
+    
+[I 230216 18:06:05 main:146] Cycle took 49.50 seconds to complete
+    
+[I 230216 18:06:32 main:130] Processing no. 121 took 0 minutes and 26 seconds to complete
+    
+[I 230216 18:06:54 main:146] Cycle took 48.80 seconds to complete
+    
+[I 230216 18:07:21 main:130] Processing no. 122 took 0 minutes and 26 seconds to complete
+    
+[I 230216 18:07:43 main:146] Cycle took 48.82 seconds to complete
+    
+[I 230216 18:08:10 main:130] Processing no. 123 took 0 minutes and 26 seconds to complete
+    
+[I 230216 18:08:32 main:146] Cycle took 49.18 seconds to complete
+    
+[I 230216 18:08:59 main:130] Processing no. 124 took 0 minutes and 26 seconds to complete
+    
+[I 230216 18:09:21 main:146] Cycle took 49.23 seconds to complete
+    
+[I 230216 18:09:49 main:130] Processing no. 125 took 0 minutes and 26 seconds to complete
+    
+[I 230216 18:10:11 main:146] Cycle took 49.47 seconds to complete
+    
+[I 230216 18:10:38 main:130] Processing no. 126 took 0 minutes and 27 seconds to complete
+    
+[I 230216 18:10:59 main:146] Cycle took 48.64 seconds to complete
+    
+[I 230216 18:11:27 main:130] Processing no. 127 took 0 minutes and 26 seconds to complete
+    
+[I 230216 18:11:49 main:146] Cycle took 49.45 seconds to complete
+    
+[I 230216 18:12:17 main:130] Processing no. 128 took 0 minutes and 27 seconds to complete
+    
+[I 230216 18:12:38 main:146] Cycle took 48.85 seconds to complete
+    
+[I 230216 18:13:05 main:130] Processing no. 129 took 0 minutes and 27 seconds to complete
+    
+[I 230216 18:13:26 main:146] Cycle took 48.81 seconds to complete
+    
+[I 230216 18:13:55 main:130] Processing no. 130 took 0 minutes and 27 seconds to complete
+    
+[I 230216 18:14:16 main:146] Cycle took 49.21 seconds to complete
+    
+[I 230216 18:14:44 main:130] Processing no. 131 took 0 minutes and 27 seconds to complete
+    
+[I 230216 18:15:05 main:146] Cycle took 49.30 seconds to complete
+    
+[I 230216 18:15:34 main:130] Processing no. 132 took 0 minutes and 28 seconds to complete
+    
+[I 230216 18:15:54 main:146] Cycle took 48.66 seconds to complete
+    
+[I 230216 18:16:22 main:130] Processing no. 133 took 0 minutes and 28 seconds to complete
+    
+[I 230216 18:16:42 main:146] Cycle took 48.57 seconds to complete
+    
+[I 230216 18:17:11 main:130] Processing no. 134 took 0 minutes and 28 seconds to complete
+    
+[I 230216 18:17:31 main:146] Cycle took 48.95 seconds to complete
+    
+[I 230216 18:18:00 main:130] Processing no. 135 took 0 minutes and 28 seconds to complete
+    
+[I 230216 18:18:20 main:146] Cycle took 48.76 seconds to complete
+    
+[I 230216 18:18:49 main:130] Processing no. 136 took 0 minutes and 28 seconds to complete
+    
+[I 230216 18:19:09 main:146] Cycle took 48.89 seconds to complete
+    
+[I 230216 18:19:38 main:130] Processing no. 137 took 0 minutes and 28 seconds to complete
+    
+[I 230216 18:19:58 main:146] Cycle took 49.11 seconds to complete
+    
+[I 230216 18:20:27 main:130] Processing no. 138 took 0 minutes and 28 seconds to complete
+    
+[I 230216 18:20:47 main:146] Cycle took 49.26 seconds to complete
+    
+[I 230216 18:21:17 main:130] Processing no. 139 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:21:36 main:146] Cycle took 48.98 seconds to complete
+    
+[I 230216 18:22:06 main:130] Processing no. 140 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:22:25 main:146] Cycle took 48.77 seconds to complete
+    
+[I 230216 18:22:55 main:130] Processing no. 141 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:23:14 main:146] Cycle took 48.87 seconds to complete
+    
+[I 230216 18:23:44 main:130] Processing no. 142 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:24:03 main:146] Cycle took 48.98 seconds to complete
+    
+[I 230216 18:24:33 main:130] Processing no. 143 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:24:52 main:146] Cycle took 49.02 seconds to complete
+    
+[I 230216 18:25:22 main:130] Processing no. 144 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:25:41 main:146] Cycle took 48.98 seconds to complete
+    
+[I 230216 18:26:11 main:130] Processing no. 145 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:26:30 main:146] Cycle took 49.21 seconds to complete
+    
+[I 230216 18:27:00 main:130] Processing no. 146 took 0 minutes and 29 seconds to complete
+    
+[I 230216 18:27:19 main:146] Cycle took 49.37 seconds to complete
+    
+[I 230216 18:27:50 main:130] Processing no. 147 took 0 minutes and 30 seconds to complete
+    
+[I 230216 18:28:08 main:146] Cycle took 48.54 seconds to complete
+    
+[I 230216 18:28:39 main:130] Processing no. 148 took 0 minutes and 30 seconds to complete
+    
+[I 230216 18:28:57 main:146] Cycle took 48.79 seconds to complete
+    
+[I 230216 18:29:28 main:130] Processing no. 149 took 0 minutes and 30 seconds to complete
+    
+[I 230216 18:29:46 main:146] Cycle took 48.91 seconds to complete
+    
+[I 230216 18:30:16 main:130] Processing no. 150 took 0 minutes and 30 seconds to complete
+    
+[I 230216 18:30:34 main:146] Cycle took 48.75 seconds to complete
+    
+[I 230216 18:31:05 main:130] Processing no. 151 took 0 minutes and 30 seconds to complete
+    
+[I 230216 18:31:23 main:146] Cycle took 49.08 seconds to complete
+    
+[I 230216 18:31:55 main:130] Processing no. 152 took 0 minutes and 30 seconds to complete
+    
+[I 230216 18:32:13 main:146] Cycle took 49.27 seconds to complete
+    
+[I 230216 18:32:44 main:130] Processing no. 153 took 0 minutes and 30 seconds to complete
+    
+[I 230216 18:33:02 main:146] Cycle took 49.49 seconds to complete
+    
+[I 230216 18:33:34 main:130] Processing no. 154 took 0 minutes and 31 seconds to complete
+    
+[I 230216 18:33:51 main:146] Cycle took 48.85 seconds to complete
+    
+[I 230216 18:34:23 main:130] Processing no. 155 took 0 minutes and 31 seconds to complete
+    
+[I 230216 18:34:40 main:146] Cycle took 48.89 seconds to complete
+    
+[I 230216 18:35:12 main:130] Processing no. 156 took 0 minutes and 31 seconds to complete
+    
+[I 230216 18:35:29 main:146] Cycle took 48.74 seconds to complete
+    
+[I 230216 18:36:01 main:130] Processing no. 157 took 0 minutes and 31 seconds to complete
+    
+[I 230216 18:36:18 main:146] Cycle took 49.26 seconds to complete
+    
+[I 230216 18:36:50 main:130] Processing no. 158 took 0 minutes and 31 seconds to complete
+    
+[I 230216 18:37:07 main:146] Cycle took 49.42 seconds to complete
+    
+[I 230216 18:37:40 main:130] Processing no. 159 took 0 minutes and 32 seconds to complete
+    
+[I 230216 18:37:56 main:146] Cycle took 48.70 seconds to complete
+    
+[I 230216 18:38:29 main:130] Processing no. 160 took 0 minutes and 32 seconds to complete
+    
+[I 230216 18:38:45 main:146] Cycle took 48.75 seconds to complete
+    
+[I 230216 18:39:18 main:130] Processing no. 161 took 0 minutes and 32 seconds to complete
+    
+[I 230216 18:39:34 main:146] Cycle took 48.79 seconds to complete
+    
+[I 230216 18:40:07 main:130] Processing no. 162 took 0 minutes and 32 seconds to complete
+    
+[I 230216 18:40:23 main:146] Cycle took 49.01 seconds to complete
+    
+[I 230216 18:40:56 main:130] Processing no. 163 took 0 minutes and 32 seconds to complete
+    
+[I 230216 18:41:12 main:146] Cycle took 49.13 seconds to complete
+    
+[I 230216 18:41:45 main:130] Processing no. 164 took 0 minutes and 32 seconds to complete
+    
+[I 230216 18:42:01 main:146] Cycle took 49.27 seconds to complete
+    
+[I 230216 18:42:34 main:130] Processing no. 165 took 0 minutes and 32 seconds to complete
+    
+[I 230216 18:42:50 main:146] Cycle took 49.44 seconds to complete
+    
+[I 230216 18:43:24 main:130] Processing no. 166 took 0 minutes and 33 seconds to complete
+    
+[I 230216 18:43:39 main:146] Cycle took 48.59 seconds to complete
+    
+[I 230216 18:44:13 main:130] Processing no. 167 took 0 minutes and 33 seconds to complete
+    
+[I 230216 18:44:28 main:146] Cycle took 48.86 seconds to complete
+    
+[I 230216 18:45:02 main:130] Processing no. 168 took 0 minutes and 33 seconds to complete
+    
+[I 230216 18:45:17 main:146] Cycle took 49.16 seconds to complete
+    
+[I 230216 18:45:51 main:130] Processing no. 169 took 0 minutes and 33 seconds to complete
+    
+[I 230216 18:46:06 main:146] Cycle took 49.06 seconds to complete
+    
+[I 230216 18:46:40 main:130] Processing no. 170 took 0 minutes and 33 seconds to complete
+    
+[I 230216 18:46:55 main:146] Cycle took 49.07 seconds to complete
+    
+[I 230216 18:47:29 main:130] Processing no. 171 took 0 minutes and 33 seconds to complete
+    
+[I 230216 18:47:44 main:146] Cycle took 49.33 seconds to complete
+    
+[I 230216 18:48:19 main:130] Processing no. 172 took 0 minutes and 33 seconds to complete
+    
+[I 230216 18:48:34 main:146] Cycle took 49.39 seconds to complete
+    
+[I 230216 18:49:08 main:130] Processing no. 173 took 0 minutes and 34 seconds to complete
+    
+[I 230216 18:49:22 main:146] Cycle took 48.60 seconds to complete
+    
+[I 230216 18:49:57 main:130] Processing no. 174 took 0 minutes and 34 seconds to complete
+    
+[I 230216 18:50:11 main:146] Cycle took 48.91 seconds to complete
+    
+[I 230216 18:50:46 main:130] Processing no. 175 took 0 minutes and 34 seconds to complete
+    
+[I 230216 18:51:00 main:146] Cycle took 49.00 seconds to complete
+    
+[I 230216 18:51:36 main:130] Processing no. 176 took 0 minutes and 34 seconds to complete
+    
+[I 230216 18:51:50 main:146] Cycle took 49.18 seconds to complete
+    
+[I 230216 18:52:25 main:130] Processing no. 177 took 0 minutes and 34 seconds to complete
+    
+[I 230216 18:52:39 main:146] Cycle took 49.29 seconds to complete
+    
+[I 230216 18:53:14 main:130] Processing no. 178 took 0 minutes and 34 seconds to complete
+    
+[I 230216 18:53:28 main:146] Cycle took 49.42 seconds to complete
+    
+[I 230216 18:54:04 main:130] Processing no. 179 took 0 minutes and 34 seconds to complete
+    
+[I 230216 18:54:18 main:146] Cycle took 49.46 seconds to complete
+    
+[I 230216 18:54:53 main:130] Processing no. 180 took 0 minutes and 35 seconds to complete
+    
+[I 230216 18:55:06 main:146] Cycle took 48.63 seconds to complete
+    
+[I 230216 18:55:42 main:130] Processing no. 181 took 0 minutes and 35 seconds to complete
+    
+[I 230216 18:55:55 main:146] Cycle took 48.87 seconds to complete
+    
+[I 230216 18:56:31 main:130] Processing no. 182 took 0 minutes and 35 seconds to complete
+    
+[I 230216 18:56:44 main:146] Cycle took 48.94 seconds to complete
+    
+[I 230216 18:57:20 main:130] Processing no. 183 took 0 minutes and 35 seconds to complete
+    
+[I 230216 18:57:33 main:146] Cycle took 49.23 seconds to complete
+    
+[I 230216 18:58:10 main:130] Processing no. 184 took 0 minutes and 35 seconds to complete
+    
+[I 230216 18:58:23 main:146] Cycle took 49.38 seconds to complete
+    
+[I 230216 18:58:59 main:130] Processing no. 185 took 0 minutes and 36 seconds to complete
+    
+[I 230216 18:59:11 main:146] Cycle took 48.50 seconds to complete
+    
+[I 230216 18:59:48 main:130] Processing no. 186 took 0 minutes and 36 seconds to complete
+    
+[I 230216 19:00:00 main:146] Cycle took 48.64 seconds to complete
+    
+[I 230216 19:00:37 main:130] Processing no. 187 took 0 minutes and 36 seconds to complete
+    
+[I 230216 19:00:49 main:146] Cycle took 48.72 seconds to complete
+    
+[I 230216 19:01:26 main:130] Processing no. 188 took 0 minutes and 36 seconds to complete
+    
+[I 230216 19:01:38 main:146] Cycle took 48.92 seconds to complete
+    
+[I 230216 19:02:15 main:130] Processing no. 189 took 0 minutes and 36 seconds to complete
+    
+[I 230216 19:02:27 main:146] Cycle took 48.96 seconds to complete
+    
+[I 230216 19:03:04 main:130] Processing no. 190 took 0 minutes and 36 seconds to complete
+    
+[I 230216 19:03:16 main:146] Cycle took 49.19 seconds to complete
+    
+[I 230216 19:03:53 main:130] Processing no. 191 took 0 minutes and 36 seconds to complete
+    
+[I 230216 19:04:05 main:146] Cycle took 49.37 seconds to complete
+    
+[I 230216 19:04:43 main:130] Processing no. 192 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:04:54 main:146] Cycle took 48.57 seconds to complete
+    
+[I 230216 19:05:32 main:130] Processing no. 193 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:05:43 main:146] Cycle took 48.93 seconds to complete
+    
+[I 230216 19:06:21 main:130] Processing no. 194 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:06:32 main:146] Cycle took 49.03 seconds to complete
+    
+[I 230216 19:07:09 main:130] Processing no. 195 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:07:21 main:146] Cycle took 48.85 seconds to complete
+    
+[I 230216 19:07:58 main:130] Processing no. 196 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:08:10 main:146] Cycle took 49.00 seconds to complete
+    
+[I 230216 19:08:48 main:130] Processing no. 197 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:08:59 main:146] Cycle took 49.30 seconds to complete
+    
+[I 230216 19:09:37 main:130] Processing no. 198 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:09:48 main:146] Cycle took 49.40 seconds to complete
+    
+[I 230216 19:10:27 main:130] Processing no. 199 took 0 minutes and 37 seconds to complete
+    
+[I 230216 19:10:38 main:146] Cycle took 49.44 seconds to complete
+    
+[I 230216 19:11:16 main:130] Processing no. 200 took 0 minutes and 38 seconds to complete
+    
+[I 230216 19:11:26 main:146] Cycle took 48.76 seconds to complete
+    
+[I 230216 19:12:05 main:130] Processing no. 201 took 0 minutes and 38 seconds to complete
+    
+[I 230216 19:12:15 main:146] Cycle took 49.00 seconds to complete
+    
+[I 230216 19:12:55 main:130] Processing no. 202 took 0 minutes and 38 seconds to complete
+    
+[I 230216 19:13:05 main:146] Cycle took 49.10 seconds to complete
+    
+[I 230216 19:13:44 main:130] Processing no. 203 took 0 minutes and 38 seconds to complete
+    
+[I 230216 19:13:54 main:146] Cycle took 49.29 seconds to complete
+    
+[I 230216 19:14:33 main:130] Processing no. 204 took 0 minutes and 38 seconds to complete
+    
+[I 230216 19:14:43 main:146] Cycle took 49.20 seconds to complete
+    
+[I 230216 19:15:22 main:130] Processing no. 205 took 0 minutes and 38 seconds to complete
+    
+[I 230216 19:15:32 main:146] Cycle took 49.36 seconds to complete
+    
+[I 230216 19:16:12 main:130] Processing no. 206 took 0 minutes and 39 seconds to complete
+    
+[I 230216 19:16:21 main:146] Cycle took 48.53 seconds to complete
+    
+[I 230216 19:17:01 main:130] Processing no. 207 took 0 minutes and 39 seconds to complete
+    
+[I 230216 19:17:10 main:146] Cycle took 48.80 seconds to complete
+    
+[I 230216 19:17:50 main:130] Processing no. 208 took 0 minutes and 39 seconds to complete
+    
+[I 230216 19:17:59 main:146] Cycle took 49.17 seconds to complete
+    
+[I 230216 19:18:39 main:130] Processing no. 209 took 0 minutes and 39 seconds to complete
+    
+[I 230216 19:18:48 main:146] Cycle took 49.32 seconds to complete
+    
+[I 230216 19:19:29 main:130] Processing no. 210 took 0 minutes and 39 seconds to complete
+    
+[I 230216 19:19:38 main:146] Cycle took 49.38 seconds to complete
+    
+[I 230216 19:20:18 main:130] Processing no. 211 took 0 minutes and 40 seconds to complete
+    
+[I 230216 19:20:26 main:146] Cycle took 48.69 seconds to complete
+    
+[I 230216 19:21:07 main:130] Processing no. 212 took 0 minutes and 39 seconds to complete
+    
+[I 230216 19:21:16 main:146] Cycle took 49.45 seconds to complete
+    
+[I 230216 19:21:56 main:130] Processing no. 213 took 0 minutes and 39 seconds to complete
+    
+[I 230216 19:22:05 main:146] Cycle took 49.49 seconds to complete
+    
+[I 230216 19:22:46 main:130] Processing no. 214 took 0 minutes and 40 seconds to complete
+    
+[I 230216 19:22:54 main:146] Cycle took 48.91 seconds to complete
+    
+[I 230216 19:23:35 main:130] Processing no. 215 took 0 minutes and 40 seconds to complete
+    
+[I 230216 19:23:43 main:146] Cycle took 48.90 seconds to complete
+    
+[I 230216 19:24:24 main:130] Processing no. 216 took 0 minutes and 40 seconds to complete
+    
+[I 230216 19:24:32 main:146] Cycle took 49.21 seconds to complete
+    
+[I 230216 19:25:14 main:130] Processing no. 217 took 0 minutes and 40 seconds to complete
+    
+[I 230216 19:25:22 main:146] Cycle took 49.40 seconds to complete
+    
+[I 230216 19:26:03 main:130] Processing no. 218 took 0 minutes and 40 seconds to complete
+    
+[I 230216 19:26:11 main:146] Cycle took 49.47 seconds to complete
+    
+[I 230216 19:26:53 main:130] Processing no. 219 took 0 minutes and 41 seconds to complete
+    
+[I 230216 19:27:00 main:146] Cycle took 48.66 seconds to complete
+    
+[I 230216 19:27:00 main:160] End Time: 2023-02-16 19:27:00.282713
+    
+[I 230216 19:27:00 main:161] Total time: 179 min 47 s
+    
