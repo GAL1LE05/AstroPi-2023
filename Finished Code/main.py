@@ -4,6 +4,7 @@ from time import sleep, perf_counter
 from orbit import ISS
 from pathlib import Path
 from datetime import datetime, timedelta
+import numpy as np
 import csv
 from logzero import logfile, logger
 import ndvi
@@ -93,7 +94,7 @@ create_csv_file(img_data_file)
 
 # Loop for the necessary times to get as close to the total time, in
 # minutes, as possible, with the expected loop duration.
-for i in range(int(total_time*60/loop_time)-1):
+for i in range(np.floor(total_time*60/loop_time+1)):
     # Get the start time of the loop
     loop_start = perf_counter()
     # Update the current time
