@@ -15,6 +15,9 @@ Use images captured by the AstroPi SpaceLab mission aboard the ISS to calculate 
 - ~~(Maybe) Integrate both the image capture and processing together and automate it for the 3 hour mission~~
 - ~~Test the final code~~
 - ~~Document the code~~
+- Receive experimental data from the ISS
+- Analyse the data
+- Produce a report explaining our findings
 
 ## Dependencies
 - picamera
